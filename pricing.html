@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - SentrySight</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Your main stylesheet -->
+    <link rel="stylesheet" href="pricing-styles.css"> <!-- New stylesheet for pricing -->
+    <style>
+        /* Critical styles from main layout */
+        :root {
+            --primary-color: #8B7DEE;
+            --dark-bg: #1c1e2a;
+            --darker-bg: #151723;
+            --darkest-bg: #111219;
+            --text-color: #ffffff;
+            --nav-item-color: #b0b0b0;
+            --button-color: #ed3c64; /* Main action button color */
+            --accent-blue: #3a6a9e;
+            --accent-green: #3a9e6a;
+            --accent-orange: #e65100; /* From React example for premium */
+            --section-padding: 100px 0;
+            --header-height: 70px;
+            --input-bg: #2a2d3d;
+            --input-border: #444857;
+            --input-focus-border: var(--primary-color);
+        }
+        body {
+            padding-top: var(--header-height);
+            background-color: var(--darker-bg);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent minor horizontal scroll */
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { /* Ensure header styles from styles.css are included */ }
+        footer { /* Ensure footer styles from styles.css are included */ }
+        
+        /* Price alternative styling */
+        .price-alternative {
+            font-size: 0.5em;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+        
+        /* Checkbox styling */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .checkbox-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .checkbox-option label {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Responsive Header Adjustments (Copy from demo.html if needed) */
+        @media (max-width: 768px) {
+            body { padding-top: 120px; }
+            header#main-header { height: auto; }
+            .nav-container { flex-direction: column; padding: 15px 0; height: auto; }
+            .logo-container { margin-bottom: 15px; }
+            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            nav ul li { margin: 5px 10px; }
+            .login-btn { margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Standard Header -->
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
+                <span class="logo-text">SentrySight</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="questionnaire.html">Questionnaire</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li> <!-- Link to this page -->
+                </ul>
+            </nav>
+            <a href="signup.html" class="login-btn active">Sign Up for Waitlist</a>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container pricing-container">
+            <div class="pricing-header">
+                <h1>Our Pricing Plans</h1>
+                <p class="pricing-subtitle">Choose the plan that best fits your security needs and budget.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Plan 1: Local On-Premise -->
+                <div class="pricing-card">
+                    <div class="card-header header-flat">
+                        <h2>LOCAL ON-PREMISE</h2>
+                    </div>
+                    <div class="card-price">
+                        $2,000<span class="price-unit">/appliance</span>
+                    </div>
+                    <div class="card-features">
+                        <ul>
+                            <li><i class="fas fa-check-circle feature-icon flat-icon"></i><span>Flat license fee of $500</span></li>
+                            <li><i class="fas fa-check-circle feature-icon flat-icon"></i><span>Receive the newest update and feature with no additional cost</span></li>
+                            <li><i class="fas fa-check-circle feature-icon flat-icon"></i><span>Robust hardware equipped for 10+ cameras</span></li>
+                            <li><i class="fas fa-times-circle feature-icon-alt flat-icon"></i><span>Cameras not included</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                       <a href="#contact" class="card-button button-flat">Select Plan</a> <!-- Example link -->
+                    </div>
+                </div>
+
+                <!-- Plan 2: Basic Subscription -->
+                <div class="pricing-card popular"> <!-- Add 'popular' class if desired -->
+                     <div class="popular-badge">Most Popular</div>
+                    <div class="card-header header-basic">
+                        <h2>BASIC SUBSCRIPTION</h2>
+                    </div>
+                    <div class="card-price">
+                        $15<span class="price-unit">/camera/month</span>
+                    </div>
+                    <div class="card-features">
+                         <ul>
+                            <li><i class="fas fa-check-circle feature-icon basic-icon"></i><span>Flat license fee of $500</span></li>
+                            <li><i class="fas fa-check-circle feature-icon basic-icon"></i><span>Receive updates during subscription</span></li>
+                            <li><i class="fas fa-check-circle feature-icon basic-icon"></i><span>Free customer and technical support 24/7</span></li>
+                            <li><i class="fas fa-exclamation-circle feature-icon-alt basic-icon"></i><span>SMS fees at additional cost</span></li>
+                        </ul>
+                    </div>
+                     <div class="card-footer">
+                       <a href="#contact" class="card-button button-basic">Select Plan</a>
+                    </div>
+                </div>
+
+                <!-- Plan 3: Premium Package -->
+                <div class="pricing-card">
+                    <div class="card-header header-premium">
+                        <h2>PREMIUM PACKAGE</h2>
+                    </div>
+                    <div class="card-price">
+                        $50<span class="price-unit">/camera/month</span>
+                        <div class="price-alternative">or $5,000/appliance</div>
+                    </div>
+                    <div class="card-features">
+                        <ul>
+                             <li><i class="fas fa-star feature-icon premium-icon"></i><span>All Basic benefits included</span></li>
+                             <li><i class="fas fa-star feature-icon premium-icon"></i><span>Additional tailored business safety features</span></li>
+                             <li><i class="fas fa-star feature-icon premium-icon"></i><span>Further discounts for extended contract terms</span></li>
+                             <li><i class="fas fa-star feature-icon premium-icon"></i><span>Priority Support Queue</span></li>
+                        </ul>
+                    </div>
+                     <div class="card-footer">
+                       <a href="#contact" class="card-button button-premium">Select Plan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pricing-actions">
+                 <!-- Link might go to a specific contact section/page -->
+                <button id="estimateBtn" class="action-button estimate-button">Get a Custom Estimate</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard Footer -->
+    <footer id="footer">
+        <!-- Footer content from demo.html -->
+         <div class="container">
+             <div class="footer-links">
+                 <a href="index.html">Home</a>
+                 <a href="about.html">About Us</a>
+                 <a href="questionnaire.html">Questionnaire</a>
+                 <a href="demo.html">Demo</a>
+                 <a href="#">Terms</a>
+                 <a href="#">Privacy</a>
+                 <a href="pricing.html">Pricing</a>
+             </div>
+             <div class="social-icons">
+                 <a href="#"><i class="fab fa-twitter"></i></a>
+                 <a href="#"><i class="fab fa-facebook-f"></i></a>
+                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="#"><i class="fab fa-instagram"></i></a>
+                 <a href="#"><i class="fas fa-envelope"></i></a>
+             </div>
+             <p class="copyright">© 2025 SentrySight. All rights reserved.</p>
+         </div>
+    </footer>
+
+    <!-- Estimate Modal -->
+    <div class="modal-overlay" id="estimateModal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">×</button>
+            <h2>Get a Custom Estimate</h2>
+            <p>Fill in your requirements below for a preliminary estimate.</p>
+
+            <form id="estimateForm">
+                <!-- 1. CAMERA SETUP -->
+                <div class="modal-section">
+                    <h3><i class="fas fa-video modal-icon"></i>Camera Setup</h3>
+                    <div class="form-group">
+                        <label for="numCameras">Number of Cameras:</label>
+                        <input type="number" id="numCameras" name="numCameras" min="1" value="1" required>
+                    </div>
+                </div>
+
+                <!-- 2. PLAN SELECTION -->
+                <div class="modal-section">
+                    <h3><i class="fas fa-shield-alt modal-icon"></i>Plan Selection</h3>
+                    <div class="form-group">
+                        <label for="planType">Which Plan are you interested in?</label>
+                        <select id="planType" name="planType" required>
+                            <option value="">-- Select --</option>
+                            <option value="local">Local On-Premise</option>
+                            <option value="basic">Basic Subscription</option>
+                            <option value="premium">Premium Package</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 3. UPGRADE OPTIONS (Dynamic based on plan selection) -->
+                <div class="modal-section" id="upgradeSection">
+                    <h3><i class="fas fa-arrow-circle-up modal-icon"></i>Upgrade Options</h3>
+                    <div class="form-group" id="localUpgradeOptions" style="display: none;">
+                        <label>Available Upgrades (Select all that apply):</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="localUpgrade_support" name="localUpgrade" value="support">
+                                <label for="localUpgrade_support">Customer Support (+$500)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="localUpgrade_extended" name="localUpgrade" value="extended">
+                                <label for="localUpgrade_extended">Extended Warranty (+$300/appliance)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="localUpgrade_premium" name="localUpgrade" value="premium">
+                                <label for="localUpgrade_premium">Upgrade to Premium Software (+$3000/appliance)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="subscriptionUpgradeOptions" style="display: none;">
+                        <label>Available Upgrades (Select all that apply):</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option basic-only">
+                                <input type="checkbox" id="subscriptionUpgrade_premium" name="subscriptionUpgrade" value="premium">
+                                <label for="subscriptionUpgrade_premium">Upgrade to Premium (+$35/camera/month)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="subscriptionUpgrade_api" name="subscriptionUpgrade" value="api">
+                                <label for="subscriptionUpgrade_api">API Access (+$5/camera/month)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="subscriptionUpgrade_support" name="subscriptionUpgrade" value="support">
+                                <label for="subscriptionUpgrade_support">24/7 Priority Support (+$100/month)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. DISCOUNT OPTIONS (Dynamic based on plan selection) -->
+                <div class="modal-section" id="discountSection">
+                    <h3><i class="fas fa-percentage modal-icon"></i>Discount Options</h3>
+                    <div class="form-group" id="localDiscountOptions" style="display: none;">
+                        <label for="localDiscount">Available Discounts:</label>
+                        <select id="localDiscount" name="localDiscount">
+                            <option value="none">No Discount</option>
+                            <option value="multi">Multi-Appliance (15% off 5+ appliances)</option>
+                            <option value="partner">Partner Discount (20% off)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="subscriptionDiscountOptions" style="display: none;">
+                        <label for="billingCycle">Billing Cycle:</label>
+                        <select id="billingCycle" name="billingCycle">
+                            <option value="monthly">Monthly (Regular Price)</option>
+                            <option value="annual">Annual (35% Discount)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- RESULTS -->
+                <div class="estimate-result-container" id="estimateResultContainer">
+                    <div id="estimateTotal">
+                        Estimated Cost: <span id="estimateResultValue">$ ---</span>
+                    </div>
+                    <div id="estimateBreakdown"></div>
+                    <small>This is a preliminary estimate. Please contact us for a detailed quote.</small>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="action-button estimate-button">Calculate Estimate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // --- Header scroll behavior ---
+        const header = document.getElementById('main-header');
+        let lastScrollTop = 0;
+        let isScrolling = false;
+        if (header) {
+            window.addEventListener('scroll', function() { /* ... same code ... */ });
+        }
+
+        // --- Modal Logic ---
+        const estimateModal = document.getElementById('estimateModal');
+        const estimateBtn = document.getElementById('estimateBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const estimateForm = document.getElementById('estimateForm');
+        const estimateResultContainer = document.getElementById('estimateResultContainer');
+        const estimateResultValue = document.getElementById('estimateResultValue');
+        const estimateBreakdown = document.getElementById('estimateBreakdown');
+
+        // Form sections that change based on plan selection
+        const planTypeSelect = document.getElementById('planType');
+        const localUpgradeOptions = document.getElementById('localUpgradeOptions');
+        const subscriptionUpgradeOptions = document.getElementById('subscriptionUpgradeOptions');
+        const localDiscountOptions = document.getElementById('localDiscountOptions');
+        const subscriptionDiscountOptions = document.getElementById('subscriptionDiscountOptions');
+
+        function openModal() {
+            if (estimateModal) estimateModal.classList.add('active');
+        }
+
+        function closeModal() {
+            if (estimateModal) estimateModal.classList.remove('active');
+        }
+
+        // Show/hide appropriate upgrade and discount options based on plan type
+        function updateFormSections() {
+            const planType = planTypeSelect.value;
+            
+            // Reset visibility
+            localUpgradeOptions.style.display = 'none';
+            subscriptionUpgradeOptions.style.display = 'none';
+            localDiscountOptions.style.display = 'none';
+            subscriptionDiscountOptions.style.display = 'none';
+            
+            // Show appropriate sections based on plan type
+            if (planType === 'local') {
+                localUpgradeOptions.style.display = 'block';
+                localDiscountOptions.style.display = 'block';
+            } else if (planType === 'basic') {
+                subscriptionUpgradeOptions.style.display = 'block';
+                subscriptionDiscountOptions.style.display = 'block';
+                document.querySelectorAll('.basic-only').forEach(el => {
+                    el.style.display = 'flex';
+                });
+            } else if (planType === 'premium') {
+                subscriptionUpgradeOptions.style.display = 'block';
+                subscriptionDiscountOptions.style.display = 'block';
+                document.querySelectorAll('.basic-only').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+        }
+
+        function calculateEstimate(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            const numCameras = parseInt(document.getElementById('numCameras').value) || 1;
+            const planType = document.getElementById('planType').value;
+            
+            // Get upgrade options - using checkboxes now
+            const localUpgradeCheckboxes = document.querySelectorAll('input[name="localUpgrade"]:checked');
+            const subscriptionUpgradeCheckboxes = document.querySelectorAll('input[name="subscriptionUpgrade"]:checked');
+            
+            // Get discount options
+            const localDiscount = document.getElementById('localDiscount').value;
+            const billingCycle = document.getElementById('billingCycle').value;
+            
+            // Initialize variables
+            let baseCost = 0;
+            let upgradeCost = 0;
+            let discountRate = 0;
+            let totalEstimate = 0;
+            let monthlyEstimate = 0;
+            let periodLabel = '';
+            let breakdown = [];
+            
+            // Calculate base cost based on plan type
+            switch(planType) {
+                case 'local':
+                    // Calculate number of appliances needed (8 cameras = 1 appliance)
+                    const appliancesNeeded = Math.ceil(numCameras / 8);
+                    
+                    // Each appliance costs $2000 + $500 license fee
+                    baseCost = (appliancesNeeded * 2000) + 500;
+                    breakdown.push(`Base cost: ${appliancesNeeded} appliance${appliancesNeeded > 1 ? 's' : ''} × $2,000 = ${(appliancesNeeded * 2000).toLocaleString()}`);
+                    breakdown.push(`License fee: $500`);
+                    
+                    // Calculate upgrade costs - now handling multiple selections
+                    localUpgradeCheckboxes.forEach(checkbox => {
+                        switch(checkbox.value) {
+                            case 'support':
+                                upgradeCost += 500;
+                                breakdown.push(`Customer Support: +$500`);
+                                break;
+                            case 'extended':
+                                const extendedCost = 300 * appliancesNeeded;
+                                upgradeCost += extendedCost;
+                                breakdown.push(`Extended Warranty: +${extendedCost.toLocaleString()}`);
+                                break;
+                            case 'premium':
+                                const premiumCost = 3000 * appliancesNeeded;
+                                upgradeCost += premiumCost;
+                                breakdown.push(`Premium Software: +${premiumCost.toLocaleString()}`);
+                                break;
+                        }
+                    });
+                    
+                    // Calculate discount
+                    if (localDiscount === 'multi' && appliancesNeeded >= 5) {
+                        discountRate = 0.15; // 15% off for 5+ appliances
+                        breakdown.push(`Multi-Appliance Discount: -15%`);
+                    } else if (localDiscount === 'partner') {
+                        discountRate = 0.20; // 20% off for partners
+                        breakdown.push(`Partner Discount: -20%`);
+                    }
+                    
+                    periodLabel = ''; // One-time purchase
+                    break;
+                    
+                case 'basic':
+                    // $15 per camera per month
+                    const basicRate = 15;
+                    
+                    // Calculate based on billing cycle
+                    if (billingCycle === 'annual') {
+                        // 35% discount for annual payment
+                        discountRate = 0.35;
+                        monthlyEstimate = numCameras * basicRate * (1 - discountRate);
+                        baseCost = monthlyEstimate * 12;
+                        periodLabel = '/month ($' + Math.round(baseCost).toLocaleString() + '/year)';
+                        breakdown.push(`Base cost: ${numCameras} cameras × ${basicRate}/camera/month × 12 months = ${(numCameras * basicRate * 12).toLocaleString()}`);
+                        breakdown.push(`Annual Discount: -35% = -${(numCameras * basicRate * 12 * 0.35).toLocaleString()}`);
+                    } else {
+                        baseCost = numCameras * basicRate;
+                        periodLabel = '/month';
+                        breakdown.push(`Base cost: ${numCameras} cameras × ${basicRate}/camera/month = ${(numCameras * basicRate).toLocaleString()}`);
+                    }
+                    
+                    // Handle multiple subscription upgrades with checkboxes
+                    subscriptionUpgradeCheckboxes.forEach(checkbox => {
+                        switch(checkbox.value) {
+                            case 'premium':
+                                const premiumUpgrade = 35; // $35 extra per camera per month
+                                if (billingCycle === 'annual') {
+                                    const premiumUpgradeCost = numCameras * premiumUpgrade * (1 - discountRate);
+                                    upgradeCost += premiumUpgradeCost * 12;
+                                    monthlyEstimate += premiumUpgradeCost;
+                                    breakdown.push(`Premium Upgrade: ${numCameras} cameras × ${premiumUpgrade}/camera/month × 0.65 (after discount) = +${Math.round(premiumUpgradeCost).toLocaleString()}/month`);
+                                } else {
+                                    const premiumUpgradeCost = numCameras * premiumUpgrade;
+                                    upgradeCost += premiumUpgradeCost;
+                                    breakdown.push(`Premium Upgrade: ${numCameras} cameras × ${premiumUpgrade}/camera/month = +${premiumUpgradeCost.toLocaleString()}`);
+                                }
+                                break;
+                            case 'api':
+                                const apiCost = 5; // $5 extra per camera per month
+                                if (billingCycle === 'annual') {
+                                    const apiUpgradeCost = numCameras * apiCost * (1 - discountRate);
+                                    upgradeCost += apiUpgradeCost * 12;
+                                    monthlyEstimate += apiUpgradeCost;
+                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/camera/month × 0.65 (after discount) = +${Math.round(apiUpgradeCost).toLocaleString()}/month`);
+                                } else {
+                                    const apiUpgradeCost = numCameras * apiCost;
+                                    upgradeCost += apiUpgradeCost;
+                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/camera/month = +${apiUpgradeCost.toLocaleString()}`);
+                                }
+                                break;
+                            case 'support':
+                                const supportCost = 100; // $100 per month
+                                if (billingCycle === 'annual') {
+                                    const supportUpgradeCost = supportCost * (1 - discountRate);
+                                    upgradeCost += supportUpgradeCost * 12;
+                                    monthlyEstimate += supportUpgradeCost;
+                                    breakdown.push(`Priority Support: ${supportCost}/month × 0.65 (after discount) = +${Math.round(supportUpgradeCost).toLocaleString()}/month`);
+                                } else {
+                                    upgradeCost += supportCost;
+                                    breakdown.push(`Priority Support: +${supportCost}/month`);
+                                }
+                                break;
+                        }
+                    });
+                    break;
+                    
+                case 'premium':
+                    // $50 per camera per month or $5000 per appliance
+                    const premiumRate = 50;
+                    
+                    // Calculate based on billing cycle
+                    if (billingCycle === 'annual') {
+                        discountRate = 0.35;
+                        monthlyEstimate = numCameras * premiumRate * (1 - discountRate);
+                        baseCost = monthlyEstimate * 12;
+                        periodLabel = '/month ($' + Math.round(baseCost).toLocaleString() + '/year)';
+                        breakdown.push(`Base cost: ${numCameras} cameras × ${premiumRate}/camera/month × 12 months = ${(numCameras * premiumRate * 12).toLocaleString()}`);
+                        breakdown.push(`Annual Discount: -35% = -${(numCameras * premiumRate * 12 * 0.35).toLocaleString()}`);
+                    } else {
+                        baseCost = numCameras * premiumRate;
+                        periodLabel = '/month';
+                        breakdown.push(`Base cost: ${numCameras} cameras × ${premiumRate}/camera/month = ${(numCameras * premiumRate).toLocaleString()}`);
+                    }
+                    
+                    // Handle multiple subscription upgrades with checkboxes
+                    subscriptionUpgradeCheckboxes.forEach(checkbox => {
+                        // Skip "premium" checkbox since we're already on premium plan
+                        if (checkbox.value === 'premium') return;
+                        
+                        switch(checkbox.value) {
+                            case 'api':
+                                const apiCost = 5; // $5 extra per camera per month
+                                if (billingCycle === 'annual') {
+                                    const apiUpgradeCost = numCameras * apiCost * (1 - discountRate);
+                                    upgradeCost += apiUpgradeCost * 12;
+                                    monthlyEstimate += apiUpgradeCost;
+                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/camera/month × 0.65 (after discount) = +${Math.round(apiUpgradeCost).toLocaleString()}/month`);
+                                } else {
+                                    const apiUpgradeCost = numCameras * apiCost;
+                                    upgradeCost += apiUpgradeCost;
+                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/camera/month = +${apiUpgradeCost.toLocaleString()}`);
+                                }
+                                break;
+                            case 'support':
+                                const supportCost = 100; // $100 per month
+                                if (billingCycle === 'annual') {
+                                    const supportUpgradeCost = supportCost * (1 - discountRate);
+                                    upgradeCost += supportUpgradeCost * 12;
+                                    monthlyEstimate += supportUpgradeCost;
+                                    breakdown.push(`Priority Support: ${supportCost}/month × 0.65 (after discount) = +${Math.round(supportUpgradeCost).toLocaleString()}/month`);
+                                } else {
+                                    upgradeCost += supportCost;
+                                    breakdown.push(`Priority Support: +${supportCost}/month`);
+                                }
+                                break;
+                        }
+                    });
+                    break;
+                    
+                default:
+                    // No plan selected
+                    totalEstimate = 0;
+                    periodLabel = '';
+                    break;
+            }
+            
+            // Calculate total (for local plan, apply discount last)
+            if (planType === 'local' && baseCost > 0) {
+                const subtotal = baseCost + upgradeCost;
+                const discount = subtotal * discountRate;
+                totalEstimate = subtotal - discount;
+                if (discount > 0) {
+                    breakdown.push(`Subtotal: $${subtotal.toLocaleString()}`);
+                    breakdown.push(`Discount: -$${discount.toLocaleString()}`);
+                }
+            } else {
+                // For subscription plans
+                if (billingCycle === 'annual') {
+                    totalEstimate = monthlyEstimate;
+                } else {
+                    totalEstimate = baseCost + upgradeCost;
+                }
+                if (upgradeCost > 0 && billingCycle !== 'annual') {
+                    breakdown.push(`Total: $${Math.round(totalEstimate).toLocaleString()}${periodLabel}`);
+                }
+            }
+
+            // Format as currency for the main display
+            const formattedEstimate = totalEstimate > 0 ? 
+                `$${Math.round(totalEstimate).toLocaleString()}${periodLabel}` : 
+                "$ ---";
+
+            // Display result
+            if (estimateResultValue) estimateResultValue.textContent = formattedEstimate;
+            
+            // Display breakdown
+            if (estimateBreakdown) {
+                if (breakdown.length > 0) {
+                    estimateBreakdown.innerHTML = '<div class="cost-breakdown"><h4>Cost Breakdown:</h4><div class="breakdown-items">' + 
+                        breakdown.map(item => `<p>${item}</p>`).join('') + 
+                        '</div></div>';
+                } else {
+                    estimateBreakdown.innerHTML = '';
+                }
+            }
+            
+            if (estimateResultContainer) estimateResultContainer.style.display = 'block';
+        }
+
+        // --- Event Listeners ---
+        if (estimateBtn) {
+            estimateBtn.addEventListener('click', openModal);
+        }
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeModal);
+        }
+        // Show/hide upgrade and discount options when plan type changes
+        if (planTypeSelect) {
+            planTypeSelect.addEventListener('change', updateFormSections);
+        }
+        // Close modal if clicking outside the content area
+        if (estimateModal) {
+             estimateModal.addEventListener('click', function(event) {
+                // Check if the click was directly on the overlay, not the content
+                if (event.target === estimateModal) {
+                    closeModal();
+                }
+            });
+        }
+        // Handle form submission
+        if (estimateForm) {
+            estimateForm.addEventListener('submit', calculateEstimate);
+        }
+    </script>
+</body>
+</html>

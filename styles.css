@@ -1,0 +1,1449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--darkest-bg);
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    height: var(--header-height);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px; 
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #b08ee2;
+}
+
+nav {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 12px;
+}
+
+nav ul li a {
+    color: var(--nav-item-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+    display: block;
+    padding: 10px 0;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: var(--text-color);
+}
+
+.login-btn {
+    background-color: var(--button-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.login-btn:hover {
+    background-color: #d1325a;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0 40px;
+    background-color: var(--darker-bg);
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/pistol.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150%;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+.hero-image {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+}
+
+.scroll-down {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.scroll-down a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.scroll-down a:hover {
+    transform: translateY(5px);
+}
+
+/* Section Divider */
+.section-divider {
+    height: 100px;
+    background-color: var(--dark-bg);
+}
+
+/* Business Security Section */
+.business-security {
+    padding: var(--section-padding);
+    background-color: var(--darkest-bg);
+    position: relative;
+}
+
+.red-line-top {
+    height: 2px;
+    background-color: var(--button-color);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.business-security-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.business-security-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.business-security-content p {
+    color: #b0b0b0;
+    margin-bottom: 25px;
+}
+
+.business-security-image {
+    text-align: right;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: var(--section-padding);
+    background-color: var(--dark-bg);
+    position: relative;
+}
+
+.blue-accent {
+    width: 5px;
+    background-color: var(--accent-blue);
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    right: 0;
+}
+
+.how-it-works-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.how-it-works-image {
+    text-align: center;
+}
+
+.how-it-works-content {
+    padding-right: 50px;
+}
+
+.how-it-works-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.how-it-works-content p {
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+/* Security Strategy Section */
+.security-strategy {
+    padding: var(--section-padding);
+    background-color: var(--darkest-bg);
+    position: relative;
+}
+
+.green-accent {
+    width: 5px;
+    background-color: var(--accent-green);
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 0;
+}
+
+.security-strategy-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.security-strategy-content {
+    padding-left: 50px;
+}
+
+.security-strategy-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.security-strategy-content p {
+    color: #b0b0b0;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid #666;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Pre-footer */
+.pre-footer {
+    padding: 40px 0;
+    background-color: var(--button-color);
+    text-align: center;
+}
+
+.pre-footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pre-footer-title {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.pre-footer-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+
+.email-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.email-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.email-input:focus {
+    outline: none;
+    background-color: white;
+}
+
+.submit-btn {
+    padding: 12px 25px;
+    background-color: var(--darkest-bg);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2a2d3d;
+}
+
+/* Why Choose Section */
+.why-choose {
+    padding: var(--section-padding);
+    background-color: var(--darker-bg);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.red-divider {
+    width: 250px;
+    height: 3px;
+    background-color: var(--button-color);
+    margin: 0 auto 60px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon-circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.feature-icon-circle i {
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+
+.feature-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background-color: var(--darkest-bg);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: var(--nav-item-color);
+    margin: 0 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+.graph-container {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* About Us Page Styles */
+.about-hero {
+    padding: 80px 0 40px;
+    background-color: var(--darker-bg);
+    text-align: center;
+}
+
+.about-subtitle {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    max-width: 800px;
+    margin: 15px auto 0;
+}
+
+.about-content {
+    padding: 80px 0;
+    background-color: var(--dark-bg);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #b0b0b0;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.mission-values {
+    margin-bottom: 80px;
+}
+
+.mission-values h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.value-card {
+    background-color: var(--darkest-bg);
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.team-grid {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); /* Option for 4 columns wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* More flexible */
+    
+    gap: 40px;
+    /* Remove any specific 3-column rule if it exists here */
+}
+
+/* Ensure the specific about page grid inherits or has its own rules */
+.about-team-grid {
+     margin-top: 40px;
+     /* You might not need specific rules here if .team-grid is general enough */
+     /* If you only want the about page team grid to be different: */
+     /* grid-template-columns: repeat(2, 1fr); /* Example: Force 2 columns */
+}
+
+
+/* Adjustments within existing media queries */
+
+@media (max-width: 992px) {
+    .team-grid,
+    .about-team-grid { /* Ensure both classes are targeted if needed */
+        grid-template-columns: repeat(2, 1fr); /* Explicitly 2 columns for medium screens */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid,
+    .about-team-grid {
+         /* It might already switch to 1 column below this, check your existing rules */
+         /* grid-template-columns: 1fr; /* Or keep 2 columns longer if preferred */
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid,
+    .about-team-grid {
+        grid-template-columns: 1fr; /* Definitely 1 column for small screens */
+    }
+}
+
+/* Style for the team member itself (likely exists already) */
+.team-member {
+    text-align: center;
+    background-color: var(--darkest-bg); /* Optional: Add background for visual separation */
+    padding: 20px; /* Optional padding */
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional shadow */
+}
+
+.member-photo {
+    width: 150px; /* Keep size consistent */
+    height: 150px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color); /* Optional: Add border matching theme */
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--text-color); /* Ensure text is visible */
+}
+
+.member-title {
+    color: var(--primary-color); /* Use accent color */
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1rem; /* Adjust size if needed */
+}
+
+.member-bio {
+    color: var(--nav-item-color); /* Lighter text color */
+    font-size: 0.9rem;
+    max-width: 250px;
+    margin: 0 auto;
+    line-height: 1.5; /* Improve readability */
+}
+
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: var(--nav-item-color);
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--text-color);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-container,
+    .business-security-container,
+    .how-it-works-container,
+    .security-strategy-container,
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-content,
+    .business-security-content,
+    .how-it-works-content,
+    .security-strategy-content {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .hero-image {
+        margin: 40px auto 0;
+    }
+    
+    .business-security-image,
+    .how-it-works-image,
+    .about-image {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    nav {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 15px 0;
+        height: auto;
+    }
+    
+    header {
+        height: auto;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    .login-btn {
+        margin-top: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .email-form {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .email-input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .submit-btn {
+        border-radius: 4px;
+        width: 100%;
+    }
+    
+    .pre-footer-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .features-grid,
+    .values-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================
+   About Us Page Styles
+   ========================== */
+
+   .about-page-content {
+    background-color: var(--dark-bg); /* Slightly lighter background for content area */
+    padding: 80px 0; /* Consistent padding */
+}
+
+.about-container {
+    max-width: 900px; /* Control the width of the text content */
+    margin: 0 auto;
+}
+
+/* Style for the main section headings on the About page */
+.about-page-content h2 {
+    font-size: 1.8rem; /* Slightly smaller than hero title */
+    color: var(--button-color); /* Use the red accent color */
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: left; /* Align headings left */
+}
+
+/* Style for the red divider lines */
+.section-divider-red {
+    border: none;
+    height: 2px;
+    background-color: var(--button-color);
+    margin: 0 0 25px 0; /* Spacing below divider */
+    width: 100%; /* Full width relative to container */
+}
+
+.section-divider-red.centered {
+    width: 150px; /* Shorter width for centered divider */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style for paragraphs within the about page */
+.about-page-content p {
+    color: var(--nav-item-color); /* Standard light gray text */
+    line-height: 1.7;
+    margin-bottom: 40px; /* Space between text blocks/sections */
+    font-size: 1rem;
+}
+
+/* Team Section Specifics (if using the grid) */
+.team-section-about {
+   margin-bottom: 40px;
+}
+
+.about-team-grid {
+    margin-top: 40px; /* Space above team grid */
+    /* Inherits .team-grid styles */
+}
+
+/* Awards Section */
+.awards-section {
+    margin-top: 60px; /* Space above the awards section */
+}
+
+.awards-section h2 {
+    text-align: center; /* Center the "Awards & Recognition" title */
+    margin-bottom: 10px; /* Adjust spacing */
+}
+
+.awards-grid {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */ /* Original simple 3 col */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* More responsive */
+    gap: 30px;
+    margin-top: 30px; /* Space below the centered divider */
+    text-align: center;
+}
+
+.award-item img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--darkest-bg); /* Add bg color in case images are transparent */
+    display: block; /* Prevents extra space below image */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.award-item p {
+    font-size: 0.9rem;
+    color: var(--text-color); /* Slightly brighter text for captions */
+    margin-bottom: 0; /* Reset margin for captions */
+    font-weight: 500;
+}
+
+
+/* Responsive Adjustments for About Page */
+@media (max-width: 992px) {
+    .about-container {
+        max-width: 700px;
+    }
+    /* Adjust team grid if needed */
+     .about-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page-content {
+        padding: 60px 0;
+    }
+    .about-container {
+        padding: 0 20px; /* Add padding on smaller screens */
+    }
+    .about-page-content h2 {
+        font-size: 1.6rem;
+    }
+    .awards-grid {
+       /* grid-template-columns: repeat(2, 1fr); */ /* Already handled by auto-fit */
+       gap: 20px;
+    }
+    .about-team-grid {
+        /* Maybe stack team members if needed */
+         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+   .awards-grid {
+       grid-template-columns: 1fr; /* Stack awards on very small screens */
+       gap: 30px;
+   }
+   .award-item img {
+       max-width: 80%; /* Don't let award images take full width */
+   }
+}
+/* ==========================
+   Questionnaire Page Styles
+   ========================== */
+
+   .questionnaire-section {
+    padding: 60px 0 80px 0; /* Adjust padding */
+    background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+}
+
+.questionnaire-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--darkest-bg);
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden; /* Contain elements */
+}
+
+.questionnaire-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--input-border);
+    padding-bottom: 30px;
+}
+
+.questionnaire-header h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.questionnaire-header p {
+    font-size: 1.1rem;
+    color: var(--nav-item-color);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    width: 100%;
+    background-color: var(--input-bg);
+    border-radius: 25px;
+    margin-top: 30px;
+    height: 25px;
+    overflow: hidden; /* Ensure progress bar stays within bounds */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.progress-bar {
+    width: 0%; /* Starts at 0, updated by JS */
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-blue) 0%, var(--primary-color) 100%);
+    border-radius: 25px;
+    transition: width 0.4s ease-in-out;
+    text-align: center;
+    line-height: 25px; /* Vertically center text */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Form Steps (Fieldsets) */
+.form-step {
+    display: none; /* Hide all steps by default */
+    border: none;
+    padding: 0;
+    margin: 0;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-step.active-step {
+    display: block; /* Show the current step */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.form-step legend {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    width: 100%;
+    text-align: left;
+}
+
+/* Form Groups and Inputs */
+.form-group {
+    margin-bottom: 25px;
+    position: relative; /* For potential absolute positioning inside */
+}
+
+.form-group label:not(.custom-radio):not(.custom-checkbox) {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--nav-item-color);
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"], /* Add other types if needed */
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 3px rgba(139, 125, 238, 0.3); /* Primary color focus glow */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Custom Radio Buttons */
+.radio-group > label, .checkbox-group > label { /* Main group label */
+     display: block;
+     margin-bottom: 15px; /* More space before options */
+     font-weight: 500;
+     color: var(--nav-item-color);
+     font-size: 0.95rem;
+}
+
+.radio-options, .checkbox-options {
+    display: flex;
+    flex-direction: column; /* Stack options vertically */
+    gap: 12px; /* Space between options */
+}
+
+.custom-radio, .custom-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px; /* Space for custom input */
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+/* Hide default input */
+.custom-radio input, .custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create custom appearance */
+.custom-radio .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 50%; /* Makes it round for radio */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 4px; /* Square for checkbox */
+     transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect */
+.custom-radio:hover input ~ .checkmark,
+.custom-checkbox:hover input ~ .checkmark {
+    border-color: var(--input-focus-border);
+}
+
+/* Checked state */
+.custom-radio input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Create the indicator (dot/check) */
+.custom-radio .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; /* Hidden by default */
+    top: 6px;
+    left: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; /* Hidden by default */
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Show indicator when checked */
+.custom-radio input:checked ~ .checkmark:after,
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Custom Slider */
+.slider-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px;
+}
+.slider-group label { /* Group label */
+    flex-basis: 100%; /* Take full width */
+    margin-bottom: 10px;
+}
+
+.slider-group input[type="range"] {
+    flex-grow: 1; /* Take available space */
+    height: 8px;
+    cursor: pointer;
+    appearance: none;
+    width: 100%; /* Needed for flex-grow */
+    background: linear-gradient(to right, var(--accent-blue), var(--primary-color));
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+.slider-group input[type="range"]:hover {
+    opacity: 1;
+}
+/* Thumb styling */
+.slider-group input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--button-color); /* Use button color for thumb */
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--darkest-bg);
+}
+.slider-group input[type="range"]::-moz-range-thumb {
+     width: 20px;
+    height: 20px;
+    background: var(--button-color);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--darkest-bg);
+}
+
+.slider-label-left, .slider-label-right {
+    font-size: 0.85rem;
+    color: var(--nav-item-color);
+    flex-basis: auto; /* Don't force width */
+}
+.slider-value {
+    font-weight: bold;
+    color: var(--primary-color);
+    min-width: 20px; /* Ensure space for the value */
+    text-align: center;
+    margin-left: 5px;
+}
+
+
+/* Form Navigation Buttons */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--input-border);
+}
+
+.form-navigation button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    min-width: 120px; /* Give buttons some base width */
+}
+.form-navigation button:active {
+     transform: scale(0.98);
+}
+
+.prev-btn {
+    background-color: var(--input-bg);
+    color: var(--nav-item-color);
+    border: 1px solid var(--input-border);
+}
+.prev-btn:hover:not(:disabled) {
+    background-color: #3a3f51; /* Slightly darker hover */
+}
+.prev-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.next-btn, .submit-form-btn {
+    background-color: var(--button-color);
+    color: white;
+}
+.next-btn:hover, .submit-form-btn:hover {
+    background-color: #d1325a; /* Darker button color on hover */
+}
+
+/* Validation Styling */
+input.invalid-input,
+textarea.invalid-input,
+.radio-group.invalid-input > label, /* Style group label if radio is invalid */
+.checkbox-group.invalid-input > label {
+   border-color: #e74c3c !important; /* Red border for invalid */
+   box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3) !important;
+}
+.radio-group.invalid-input,
+.checkbox-group.invalid-input { /* Add visual cue to the group */
+    border-left: 3px solid #e74c3c;
+    padding-left: 10px;
+    margin-left: -13px; /* Adjust to align visually */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .questionnaire-container {
+        padding: 30px 25px;
+    }
+    .questionnaire-header h1 {
+        font-size: 1.8rem;
+    }
+    .form-step legend {
+        font-size: 1.3rem;
+    }
+    .form-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .form-navigation button {
+        width: 100%;
+    }
+     .prev-btn {
+        order: 2; /* Move prev button below next/submit on mobile */
+     }
+     .next-btn, .submit-form-btn {
+         order: 1;
+     }
+}
+
+@media (max-width: 576px) {
+     .questionnaire-header h1 {
+        font-size: 1.6rem;
+    }
+     .questionnaire-header p {
+        font-size: 1rem;
+    }
+    .slider-group {
+        flex-direction: column;
+        align-items: flex-start; /* Align labels left */
+    }
+    .slider-group input[type="range"] {
+        width: 100%; /* Ensure full width */
+        order: 2; /* Move slider below labels */
+    }
+    .slider-label-left, .slider-label-right, .slider-value {
+         order: 1; /* Keep labels above slider */
+         flex-basis: 100%; /* Full width for labels */
+         text-align: left;
+         margin-left: 0;
+    }
+    .slider-value {
+        text-align: right; /* Align value to the right */
+        margin-top: -1.5em; /* Pull it up slightly */
+        margin-right: 5px;
+    }
+}
+/* ======================================================
+   COMPLETE Demo Page Styles (Simplified - No Carousel)
+   ====================================================== */
+
+/* --- Base Demo Page Layout --- */
+.demo-section {
+    padding: 60px 0 80px 0; /* Keep overall section padding */
+    background-color: var(--darker-bg);
+}
+.demo-container {
+    max-width: 900px; /* Control content width */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.demo-header {
+    text-align: center;
+    margin-bottom: 40px; /* Space below header */
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--input-border);
+}
+.demo-header h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #e14068;
+}
+.demo-subtitle {
+    font-size: 1.1rem;
+    color: var(--nav-item-color);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- NO CAROUSEL or Explanation Container STYLES NEEDED --- */
+/* Styles for .demo-explanation, .feature-carousel-wrapper, .feature-carousel, */
+/* .carousel-slide, .slide-icon, .slide-title, .slide-description,        */
+/* .carousel-controls, .carousel-btn are REMOVED                        */
+
+
+/* --- Prompt Styling (Applied to new paragraph if desired) --- */
+/* The style for .demo-intro-paragraph is added inline in the <style> tag */
+/* of the HTML above for simplicity, but could also go here. */
+/* If you want the old italic style, add this: */
+/*
+.demo-intro-paragraph {
+    font-style: italic;
+}
+*/
+
+
+/* --- Video Player Wrapper --- */
+.video-player-wrapper {
+    position: relative;
+    max-width: 850px; /* Limit video width */
+    /* Add margin-top for spacing now that carousel is gone */
+    margin: 60px auto 0 auto;
+    background-color: var(--darkest-bg);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid var(--input-border);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Consistent shadow */
+}
+#demoVideo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background-color: #000; /* BG for loading */
+}
+.video-caption {
+    font-size: 0.85rem;
+    color: var(--nav-item-color);
+    margin-top: 12px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ================================
+   Demo Page Responsive Styles (Simplified)
+   ================================ */
+
+@media (max-width: 992px) {
+    .demo-container { max-width: 95%; }
+    .demo-header h1 { font-size: 2.1rem; }
+}
+
+@media (max-width: 768px) {
+    .demo-section { padding: 50px 0 60px 0; }
+    .demo-header h1 { font-size: 1.9rem; }
+    .demo-intro-paragraph {
+         font-size: 1rem; /* Adjust text size */
+         margin-bottom: 30px;
+    }
+    .video-player-wrapper {
+         padding: 10px;
+         margin-top: 40px; /* Adjust spacing */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Further adjustments if needed for very small screens */
+     .demo-header h1 { font-size: 1.7rem; }
+     .demo-subtitle { font-size: 1rem; }
+     .video-player-wrapper {
+          padding: 8px;
+     }
+}

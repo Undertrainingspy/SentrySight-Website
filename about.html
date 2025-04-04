@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SentrySight</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #8B7DEE;
+            --dark-bg: #1c1e2a;
+            --darker-bg: #151723;
+            --darkest-bg: #111219;
+            --text-color: #ffffff;
+            --nav-item-color: #b0b0b0;
+            --button-color: #ed3c64;
+            --accent-blue: #3a6a9e;
+            --accent-green: #3a9e6a;
+            --section-padding: 100px 0;
+            --header-height: 70px;
+        }
+
+        body {
+            padding-top: var(--header-height);
+            background-color: var(--darker-bg);
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px; 
+            }
+            header.fixed-header + .about-page-content {
+               padding-top: 120px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
+                <span class="logo-text">SentrySight</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="questionnaire.html">Questionnaire</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </nav>
+            <a href="signup.html" class="login-btn active">Sign Up for Waitlist</a>
+        </div>
+    </header>
+
+    <section class="about-page-content">
+        <div class="container about-container">
+
+            <div class="about-intro">
+                <h2>ABOUT SENTRY SIGHT</h2>
+                <hr class="section-divider-red">
+                <p>At SentrySight, we believe in the power of technology to create safer spaces for everyone. By merging artificial intelligence with real-time detection systems, we bring the future of security to the present. Our solutions are crafted for businesses, schools, and communities seeking to proactively protect their spaces with precision and innovation.</p>
+            </div>
+
+            <div class="mission-section">
+                <h2>OUR MISSION</h2>
+                <hr class="section-divider-red">
+                <p>Our mission is to make security accessible, intelligent, and effortless for everyone. We are dedicated to developing AI-driven technologies that help detect potential risks early and effectively, reducing response time and enhancing overall safety.</p>
+            </div>
+
+            <div class="offer-section">
+                <h2>WHAT WE OFFER</h2>
+                <hr class="section-divider-red">
+                <p>From AI-powered detection systems that monitor spaces in real-time to customizable alerts and analytics, our products are designed with user needs in mind. SentrySight provides solutions that fit seamlessly into daily operations, adding an extra layer of security without the complexity.</p>
+            </div>
+
+            <div class="team-section-about"> 
+                <h2>MEET OUR TEAM</h2>
+                <hr class="section-divider-red">
+                <p>Our team is composed of engineers, data scientists, and innovators driven by a commitment to safety and progress. With a collective background in AI, cybersecurity, and community safety, we bring a diverse skill set to every solution we create.</p>
+                 <div class="team-grid about-team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/huypic.jpg" alt="Team Member 1">
+                        </div>
+                        <h3>Huy Dao</h3>
+                        <p class="member-title">CTO/Lead AI Engineer</p>
+                        <p class="member-bio">Expert in computer vision and deep learning models.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/ritchiepic.jpg" alt="Team Member 2">
+                        </div>
+                        <h3>Ritchie Martinez</h3>
+                        <p class="member-title">CEO</p>
+                        <p class="member-bio">Bridging technology and user needs for seamless security.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/gavinpic.jpg" alt="Team Member 3">
+                        </div>
+                        <h3>Gavin Garcia</h3>
+                        <p class="member-title">CMO/Data Analyst</p>
+                        <p class="member-bio">Ensuring the company stays ahead of the trends.</p>
+                    </div>        
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="images/enriquepic.jpg" alt="Team Member 4">
+                        </div>
+                        <h3>Enrique De La Torre</h3>
+                        <p class="member-title">Chief Operating Officer</p>
+                        <p class="member-bio">Oversees daily operations, ensuring efficient execution of company strategy and processes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="join-us-section">
+                <h2>JOIN US IN MAKING A SAFER TOMORROW</h2>
+                <hr class="section-divider-red">
+                <p>Whether you're looking to secure your business or simply want to learn more about the future of safety technology, we welcome you to connect with us. Together, we can create safer environments for all.</p>
+            </div>
+
+            <div class="awards-section">
+                <h2>Awards & Recognition</h2>
+                <hr class="section-divider-red centered"> <!-- Centered divider -->
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <img src="images/award1.jpg" alt="1st Place AI Hackathon"> 
+                        <p>1st Place AI Hackathon</p>
+                    </div>
+                    <div class="award-item">
+                        <img src="images/award3.jpg" alt="2nd Place Statewide SunStone Competition"> 
+                        <p>2nd Place Statewide SunStone Competition</p>
+                    </div>
+                    <div class="award-item">
+                        <img src="images/award2.jpg" alt="2nd Place University Pitch Competition">
+                        <p>2nd Place University Pitch Competition</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+             <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="questionnaire.html">Questionnaire</a>
+                <a href="demo.html">Demo</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">© 2025 SentrySight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling 
+        const header = document.getElementById('main-header');
+        let lastScrollTop = 0;
+        let isScrolling = false;
+
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(function() {
+                        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                        if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+                            header.classList.add('header-hidden');
+                        } else {
+                            header.classList.remove('header-hidden');
+                        }
+
+                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            }, false);
+        } else {
+            console.warn("Header element #main-header not found.");
+        }
+
+    </script>
+</body>
+</html>

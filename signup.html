@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SentrySight</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #8B7DEE;
+            --dark-bg: #1c1e2a;
+            --darker-bg: #151723;
+            --darkest-bg: #111219;
+            --text-color: #ffffff;
+            --nav-item-color: #b0b0b0;
+            --button-color: #ed3c64;
+            --accent-blue: #3a6a9e;
+            --accent-green: #3a9e6a;
+            --section-padding: 100px 0;
+            --header-height: 70px;
+            --input-bg: #2a2d3d;
+            --input-border: #444857;
+            --input-focus-border: var(--primary-color);
+        }
+
+        body {
+            padding-top: var(--header-height);
+            background-color: var(--darker-bg);
+            color: var(--text-color);
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 120px; }
+            header#main-header { height: auto; }
+            .nav-container { flex-direction: column; padding: 15px 0; height: auto; }
+            .logo-container { margin-bottom: 15px; }
+            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            nav ul li { margin: 5px 10px; }
+            .login-btn { margin-top: 15px; }
+        }
+
+        .signup-section {
+            padding: var(--section-padding);
+            min-height: calc(100vh - var(--header-height) - 100px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .signup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .signup-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .signup-subtitle {
+            font-size: 1.2rem;
+            color: var(--nav-item-color);
+            margin-bottom: 50px;
+        }
+
+        .signup-form {
+            background-color: var(--dark-bg);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 50px;
+        }
+
+        .form-intro {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        .form-group input, 
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 5px;
+            background-color: var(--input-bg);
+            border: 1px solid var(--input-border);
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--input-focus-border);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: #7b6cde;
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .benefit-item {
+            flex: 1 1 200px;
+            max-width: 250px;
+            background-color: var(--dark-bg);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .benefit-desc {
+            color: var(--nav-item-color);
+            line-height: 1.6;
+        }
+
+        .alternate-contact {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(139, 125, 238, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
+                <span class="logo-text">SentrySight</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="questionnaire.html">Questionnaire</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </nav>
+            <a href="signup.html" class="login-btn active">Sign Up for Waitlist</a>
+        </div>
+    </header>
+
+    <section class="signup-section">
+        <div class="container signup-container">
+            <div class="signup-header">
+                <h1>Join SentrySight Waitlist</h1>
+                <p class="signup-subtitle">Be among the first to experience our revolutionary AI security system</p>
+            </div>
+
+            <div class="signup-form">
+                <p class="form-intro">
+                    Please join us for a waitlist or contact us for a demo trial. Complete the form below to secure your spot and be notified as soon as SentrySight becomes available for your organization.
+                </p>
+                <form id="waitlist-form" action="https://formspree.io/f/mjkyaaey" method="POST">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organization">Organization Name</label>
+                        <input type="text" id="organization" name="organization" placeholder="Enter your organization name (optional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organization-type">Organization Type</label>
+                        <select id="organization-type" name="organization-type">
+                            <option value="">Select your organization type</option>
+                            <option value="school">School/Educational Institution</option>
+                            <option value="business">Business/Corporate</option>
+                            <option value="government">Government Facility</option>
+                            <option value="healthcare">Healthcare Facility</option>
+                            <option value="event">Event Venue</option>
+                            <option value="retail">Retail</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your specific security needs or requests for the demo (optional)"></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Join Waitlist</button>
+                </form>
+            </div>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="benefit-title">Early Access</h3>
+                    <p class="benefit-desc">Get priority access to SentrySight when it's ready for deployment at your organization.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Custom Demo</h3>
+                    <p class="benefit-desc">Schedule a personalized demonstration tailored to your organization's specific security needs.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3 class="benefit-title">Special Pricing</h3>
+                    <p class="benefit-desc">Waitlist members receive exclusive discounts on initial deployment and subscription plans.</p>
+                </div>
+            </div>
+
+            <div class="alternate-contact">
+                <h3>Prefer to speak with someone directly?</h3>
+                <p>Contact our sales team at <strong>info@sentrysight.com</strong> or call us at <strong>(555) 123-4567</strong></p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="footer">
+         <div class="container">
+             <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="questionnaire.html">Questionnaire</a>
+                <a href="demo.html">Demo</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">© 2025 SentrySight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Header scroll behavior ---
+        const header = document.getElementById('main-header');
+        let lastScrollTop = 0;
+        let isScrolling = false;
+
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(function() {
+                        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+                            header.classList.add('header-hidden');
+                        } else {
+                            header.classList.remove('header-hidden');
+                        }
+                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            }, false);
+        }
+
+        // Handle form submission with AJAX to prevent redirect
+        const waitlistForm = document.getElementById('waitlist-form');
+        if (waitlistForm) {
+            waitlistForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent the default form submission
+                
+                // Collect form data
+                const formData = new FormData(waitlistForm);
+                
+                // Submit form using fetch API
+                fetch(waitlistForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        alert('Thank you for joining our waitlist! We will contact you soon with more information.');
+                        waitlistForm.reset(); // Reset the form
+                    } else {
+                        // Handle error
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                alert(data["errors"].map(error => error["message"]).join(", "));
+                            } else {
+                                alert("Something went wrong. Please try again.");
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    // Network error
+                    alert("There was a problem submitting your form. Please try again.");
+                });
+            });
+        }
+    </script>
+</body>
+</html>

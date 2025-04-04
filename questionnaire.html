@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire - SentrySight</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Critical styles that need to remain in the HTML */
+        :root {
+            --primary-color: #8B7DEE;
+            --dark-bg: #1c1e2a;
+            --darker-bg: #151723;
+            --darkest-bg: #111219;
+            --text-color: #ffffff;
+            --nav-item-color: #b0b0b0;
+            --button-color: #ed3c64;
+            --accent-blue: #3a6a9e;
+            --accent-green: #3a9e6a;
+            --section-padding: 100px 0;
+            --header-height: 70px;
+            --input-bg: #2a2d3d; /* Slightly lighter for inputs */
+            --input-border: #444857;
+            --input-focus-border: var(--primary-color);
+        }
+
+        body {
+            padding-top: var(--header-height);
+            background-color: var(--darker-bg);
+            color: var(--text-color);
+        }
+
+        /* Responsive fixes */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px; /* Adjust if header wraps */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
+                <span class="logo-text">SentrySight</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="questionnaire.html" class="active">Questionnaire</a></li>
+                    <li><a href="demo.html">Demo</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </nav>
+            <a href="signup.html" class="login-btn active">Sign Up for Waitlist</a>
+        </div>
+    </header>
+
+    <section class="questionnaire-section">
+        <div class="container questionnaire-container">
+            <div class="questionnaire-header">
+                <h1>Security Enhancement Questionnaire</h1>
+                <p>Help us understand your needs to provide the best security solution.</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+
+            <form id="questionnaireForm" action="https://formspree.io/f/mjkyaaey" method="POST">
+
+                <fieldset class="form-step active-step">
+                    <legend>Business Information</legend>
+
+                    <div class="form-group">
+                        <label for="businessName">1. Business Name:</label>
+                        <input type="text" id="businessName" name="business_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="industryType">2. Industry Type (e.g., retail, office, restaurant):</label>
+                        <input type="text" id="industryType" name="industry_type" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="employeeCount">3. Number of employees at this location:</label>
+                        <input type="number" id="employeeCount" name="employee_count" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitorCount">4. Approx. daily customers or visitors:</label>
+                        <input type="number" id="visitorCount" name="visitor_count" min="0" required>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-step">
+                    <legend>Current Safety Measures</legend>
+
+                    <div class="form-group radio-group">
+                        <label>5. Do you currently have any firearm detection technology installed?</label>
+                        <div class="radio-options">
+                            <label class="custom-radio"> Yes
+                                <input type="radio" name="firearm_detection_installed" value="Yes" required>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="custom-radio"> No
+                                <input type="radio" name="firearm_detection_installed" value="No">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>6. What other safety measures are in place? (Check all that apply)</label>
+                        <div class="checkbox-options">
+                            <label class="custom-checkbox"> Surveillance cameras
+                                <input type="checkbox" name="other_safety_measures[]" value="Cameras">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="custom-checkbox"> Security guards
+                                <input type="checkbox" name="other_safety_measures[]" value="Guards">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="custom-checkbox"> Panic buttons
+                                <input type="checkbox" name="other_safety_measures[]" value="Panic Buttons">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="custom-checkbox"> Emergency lockdown procedures
+                                <input type="checkbox" name="other_safety_measures[]" value="Lockdown Procedures">
+                                <span class="checkmark"></span>
+                            </label>
+                             <label class="custom-checkbox"> None of the above
+                                <input type="checkbox" name="other_safety_measures[]" value="None">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <label for="effectiveness">7. How effective are your current measures in preventing gun violence incidents?</label>
+                        <span class="slider-label-left">Not Effective</span>
+                        <input type="range" id="effectiveness" name="current_measures_effectiveness" min="1" max="5" step="1" defaultValue="3">
+                        <span class="slider-label-right">Very Effective</span>
+                        <output for="effectiveness" class="slider-value"></output>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-step">
+                    <legend>AI Firearm Detection Integration</legend>
+
+                     <div class="form-group radio-group">
+                        <label>8. Interested in AI firearm detection with instant law enforcement alerts?</label>
+                        <div class="radio-options">
+                            <label class="custom-radio"> Yes, definitely
+                                <input type="radio" name="interest_in_ai" value="Yes" required>
+                                <span class="checkmark"></span>
+                            </label>
+                             <label class="custom-radio"> Possibly, need more info
+                                <input type="radio" name="interest_in_ai" value="Possibly">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="custom-radio"> No, not interested
+                                <input type="radio" name="interest_in_ai" value="No">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <label for="priority">9. Priority for improving firearm detection:</label>
+                         <span class="slider-label-left">Low Priority</span>
+                        <input type="range" id="priority" name="firearm_detection_priority" min="1" max="5" step="1" defaultValue="3">
+                        <span class="slider-label-right">High Priority</span>
+                         <output for="priority" class="slider-value"></output>
+                    </div>
+
+                    <div class="form-group slider-group">
+                        <label for="responseSpeed">10. Importance of police response speed:</label>
+                        <span class="slider-label-left">Not Important</span>
+                        <input type="range" id="responseSpeed" name="response_speed_importance" min="1" max="5" step="1" defaultValue="4">
+                        <span class="slider-label-right">Extremely Important</span>
+                         <output for="responseSpeed" class="slider-value"></output>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="concerns">11. Concerns about integrating AI firearm detection?</label>
+                        <textarea id="concerns" name="integration_concerns" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="suggestions">12. Other thoughts or suggestions on safety improvements?</label>
+                        <textarea id="suggestions" name="other_suggestions" rows="4"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="form-navigation">
+                    <button type="button" class="prev-btn" disabled>Previous</button>
+                    <button type="button" class="next-btn">Next</button>
+                    <button type="submit" class="submit-form-btn" style="display: none;">Submit Questionnaire</button>
+                </div>
+
+                 <!-- Hidden field for Formspree subject (optional but nice) -->
+                 <input type="hidden" name="_subject" value="New SentrySight Questionnaire Submission!">
+                 <!-- You can add more hidden fields if needed -->
+
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer">
+         <div class="container">
+             <!-- Optional: Add footer links consistent with original CSS -->
+             <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                 <a href="questionnaire.html">Questionnaire</a>
+                <a href="demo.html">Demo</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">© 2025 SentrySight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll behavior (Copied from index.html)
+        const header = document.getElementById('main-header');
+        let lastScrollTop = 0;
+        let isScrolling = false;
+
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(function() {
+                        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+                            header.classList.add('header-hidden');
+                        } else {
+                            header.classList.remove('header-hidden');
+                        }
+                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            }, false);
+        }
+
+        // Questionnaire Multi-Step Form Logic
+        const formSteps = Array.from(document.querySelectorAll('.form-step'));
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const submitBtn = document.querySelector('.submit-form-btn');
+        const progressBar = document.getElementById('progressBar');
+        let currentStep = 0;
+
+        function updateFormSteps() {
+            formSteps.forEach((step, index) => {
+                step.classList.toggle('active-step', index === currentStep);
+            });
+
+            // Update progress bar
+            const progress = ((currentStep + 1) / formSteps.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            progressBar.textContent = `Step ${currentStep + 1} of ${formSteps.length}`; // Optional text
+
+            // Update button states
+            prevBtn.disabled = currentStep === 0;
+            nextBtn.style.display = currentStep === formSteps.length - 1 ? 'none' : 'inline-block';
+            submitBtn.style.display = currentStep === formSteps.length - 1 ? 'inline-block' : 'none';
+        }
+
+        function validateStep(stepIndex) {
+            const step = formSteps[stepIndex];
+            const inputs = step.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    isValid = false;
+                    // Optional: Add visual feedback for invalid fields
+                    input.classList.add('invalid-input');
+                } else {
+                     input.classList.remove('invalid-input');
+                }
+            });
+             // Special check for radio groups where at least one must be checked
+            const radioGroups = step.querySelectorAll('.radio-group');
+             radioGroups.forEach(group => {
+                 const radios = group.querySelectorAll('input[type="radio"][required]');
+                 if (radios.length > 0) {
+                    const groupName = radios[0].name;
+                    const checkedRadio = step.querySelector(`input[type="radio"][name="${groupName}"]:checked`);
+                    if (!checkedRadio) {
+                        isValid = false;
+                        // Optional: Add visual feedback for the group
+                        group.classList.add('invalid-input');
+                    } else {
+                         group.classList.remove('invalid-input');
+                    }
+                 }
+             })
+
+            return isValid;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                if (currentStep < formSteps.length - 1) {
+                    currentStep++;
+                    updateFormSteps();
+                }
+            } else {
+                // Optionally alert the user or scroll to the first invalid field
+                alert('Please fill out all required fields in this section.');
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                // Clear validation errors when going back
+                 const step = formSteps[currentStep + 1];
+                 step.querySelectorAll('.invalid-input').forEach(el => el.classList.remove('invalid-input'));
+                updateFormSteps();
+            }
+        });
+
+        // Initialize slider value display
+        document.querySelectorAll('.slider-group input[type="range"]').forEach(slider => {
+            const output = slider.parentNode.querySelector('.slider-value');
+            if (output) {
+                output.textContent = slider.value; // Initial value
+                slider.oninput = () => { output.textContent = slider.value; };
+            }
+             // Set initial default value if specified
+             if (slider.hasAttribute('defaultValue')) {
+                 slider.value = slider.getAttribute('defaultValue');
+                 if (output) output.textContent = slider.value;
+             }
+        });
+
+        // Initial setup
+        updateFormSteps();
+
+        // Handle form submission with AJAX instead of redirect
+        document.getElementById('questionnaireForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+            
+            // Validate the final step before submitting
+            if (!validateStep(currentStep)) {
+                alert('Please fill out all required fields in this section.');
+                return;
+            }
+            
+            // Collect form data
+            const formData = new FormData(this);
+            
+            // Show loading indicator or disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Submit form using fetch API
+            fetch('https://formspree.io/f/mjkyaaey', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    alert('Thank you for submitting the questionnaire! We will review your responses and contact you soon.');
+                    
+                    // Reset form and progress
+                    this.reset();
+                    currentStep = 0;
+                    updateFormSteps();
+                    
+                    // Scroll to top
+                    window.scrollTo({
+                        top: document.querySelector('.questionnaire-header').offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Handle error
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert("Something went wrong. Please try again.");
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                // Network error
+                alert("There was a problem submitting your form. Please try again.");
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Questionnaire';
+            });
+        });
+    </script>
+
+</body>
+</html>
