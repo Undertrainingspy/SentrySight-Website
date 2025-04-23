@@ -221,7 +221,7 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                       <a href="#contact" class="card-button button-flat">Select Plan</a> <!-- Example link -->
+                       <a href="signup.html" class="card-button button-flat">Select Plan</a> <!-- Example link -->
                     </div>
                 </div>
 
@@ -232,18 +232,19 @@
                         <h2>BASIC SUBSCRIPTION</h2>
                     </div>
                     <div class="card-price">
-                        $15<span class="price-unit">/camera/month</span>
+                        $15<span class="price-unit">/stream/month</span>
                     </div>
                     <div class="card-features">
                          <ul>
                             <li><i class="fas fa-check-circle feature-icon basic-icon"></i><span>Flat license fee of $500</span></li>
                             <li><i class="fas fa-check-circle feature-icon basic-icon"></i><span>Receive updates during subscription</span></li>
                             <li><i class="fas fa-check-circle feature-icon basic-icon"></i><span>Free customer and technical support 24/7</span></li>
+                            <li><i class="fas fa-check-circle feature-icon basic-icon"></i><span>Law Enforcement Escalation</span></li>
                             <li><i class="fas fa-exclamation-circle feature-icon-alt basic-icon"></i><span>SMS fees at additional cost</span></li>
                         </ul>
                     </div>
                      <div class="card-footer">
-                       <a href="#contact" class="card-button button-basic">Select Plan</a>
+                       <a href="signup.html" class="card-button button-basic">Select Plan</a>
                     </div>
                 </div>
 
@@ -253,7 +254,7 @@
                         <h2>PREMIUM PACKAGE</h2>
                     </div>
                     <div class="card-price">
-                        $50<span class="price-unit">/camera/month</span>
+                        $50<span class="price-unit">/stream/month</span>
                         <div class="price-alternative">or $5,000/appliance</div>
                     </div>
                     <div class="card-features">
@@ -265,7 +266,7 @@
                         </ul>
                     </div>
                      <div class="card-footer">
-                       <a href="#contact" class="card-button button-premium">Select Plan</a>
+                       <a href="signup.html" class="card-button button-premium">Select Plan</a>
                     </div>
                 </div>
             </div>
@@ -314,7 +315,7 @@
                 <div class="modal-section">
                     <h3><i class="fas fa-video modal-icon"></i>Camera Setup</h3>
                     <div class="form-group">
-                        <label for="numCameras">Number of Cameras:</label>
+                        <label for="numCameras">Number of Streams:</label>
                         <input type="number" id="numCameras" name="numCameras" min="1" value="1" required>
                     </div>
                 </div>
@@ -358,11 +359,11 @@
                         <div class="checkbox-group">
                             <div class="checkbox-option basic-only">
                                 <input type="checkbox" id="subscriptionUpgrade_premium" name="subscriptionUpgrade" value="premium">
-                                <label for="subscriptionUpgrade_premium">Upgrade to Premium (+$35/camera/month)</label>
+                                <label for="subscriptionUpgrade_premium">Upgrade to Premium (+$35/stream/month)</label>
                             </div>
                             <div class="checkbox-option">
                                 <input type="checkbox" id="subscriptionUpgrade_api" name="subscriptionUpgrade" value="api">
-                                <label for="subscriptionUpgrade_api">API Access (+$5/camera/month)</label>
+                                <label for="subscriptionUpgrade_api">API Access (+$5/stream/month)</label>
                             </div>
                             <div class="checkbox-option">
                                 <input type="checkbox" id="subscriptionUpgrade_support" name="subscriptionUpgrade" value="support">
@@ -575,12 +576,12 @@
                         monthlyEstimate = numCameras * basicRate * (1 - discountRate);
                         baseCost = monthlyEstimate * 12;
                         periodLabel = '/month ($' + Math.round(baseCost).toLocaleString() + '/year)';
-                        breakdown.push(`Base cost: ${numCameras} cameras × ${basicRate}/camera/month × 12 months = ${(numCameras * basicRate * 12).toLocaleString()}`);
+                        breakdown.push(`Base cost: ${numCameras} cameras × ${basicRate}/stream/month × 12 months = ${(numCameras * basicRate * 12).toLocaleString()}`);
                         breakdown.push(`Annual Discount: -35% = -${(numCameras * basicRate * 12 * 0.35).toLocaleString()}`);
                     } else {
                         baseCost = numCameras * basicRate;
                         periodLabel = '/month';
-                        breakdown.push(`Base cost: ${numCameras} cameras × ${basicRate}/camera/month = ${(numCameras * basicRate).toLocaleString()}`);
+                        breakdown.push(`Base cost: ${numCameras} cameras × ${basicRate}/stream/month = ${(numCameras * basicRate).toLocaleString()}`);
                     }
                     
                     // Handle multiple subscription upgrades with checkboxes
@@ -592,11 +593,11 @@
                                     const premiumUpgradeCost = numCameras * premiumUpgrade * (1 - discountRate);
                                     upgradeCost += premiumUpgradeCost * 12;
                                     monthlyEstimate += premiumUpgradeCost;
-                                    breakdown.push(`Premium Upgrade: ${numCameras} cameras × ${premiumUpgrade}/camera/month × 0.65 (after discount) = +${Math.round(premiumUpgradeCost).toLocaleString()}/month`);
+                                    breakdown.push(`Premium Upgrade: ${numCameras} cameras × ${premiumUpgrade}/stream/month × 0.65 (after discount) = +${Math.round(premiumUpgradeCost).toLocaleString()}/month`);
                                 } else {
                                     const premiumUpgradeCost = numCameras * premiumUpgrade;
                                     upgradeCost += premiumUpgradeCost;
-                                    breakdown.push(`Premium Upgrade: ${numCameras} cameras × ${premiumUpgrade}/camera/month = +${premiumUpgradeCost.toLocaleString()}`);
+                                    breakdown.push(`Premium Upgrade: ${numCameras} cameras × ${premiumUpgrade}/stream/month = +${premiumUpgradeCost.toLocaleString()}`);
                                 }
                                 break;
                             case 'api':
@@ -605,11 +606,11 @@
                                     const apiUpgradeCost = numCameras * apiCost * (1 - discountRate);
                                     upgradeCost += apiUpgradeCost * 12;
                                     monthlyEstimate += apiUpgradeCost;
-                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/camera/month × 0.65 (after discount) = +${Math.round(apiUpgradeCost).toLocaleString()}/month`);
+                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/stream/month × 0.65 (after discount) = +${Math.round(apiUpgradeCost).toLocaleString()}/month`);
                                 } else {
                                     const apiUpgradeCost = numCameras * apiCost;
                                     upgradeCost += apiUpgradeCost;
-                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/camera/month = +${apiUpgradeCost.toLocaleString()}`);
+                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/stream/month = +${apiUpgradeCost.toLocaleString()}`);
                                 }
                                 break;
                             case 'support':
@@ -638,12 +639,12 @@
                         monthlyEstimate = numCameras * premiumRate * (1 - discountRate);
                         baseCost = monthlyEstimate * 12;
                         periodLabel = '/month ($' + Math.round(baseCost).toLocaleString() + '/year)';
-                        breakdown.push(`Base cost: ${numCameras} cameras × ${premiumRate}/camera/month × 12 months = ${(numCameras * premiumRate * 12).toLocaleString()}`);
+                        breakdown.push(`Base cost: ${numCameras} cameras × ${premiumRate}/stream/month × 12 months = ${(numCameras * premiumRate * 12).toLocaleString()}`);
                         breakdown.push(`Annual Discount: -35% = -${(numCameras * premiumRate * 12 * 0.35).toLocaleString()}`);
                     } else {
                         baseCost = numCameras * premiumRate;
                         periodLabel = '/month';
-                        breakdown.push(`Base cost: ${numCameras} cameras × ${premiumRate}/camera/month = ${(numCameras * premiumRate).toLocaleString()}`);
+                        breakdown.push(`Base cost: ${numCameras} cameras × ${premiumRate}/stream/month = ${(numCameras * premiumRate).toLocaleString()}`);
                     }
                     
                     // Handle multiple subscription upgrades with checkboxes
@@ -658,11 +659,11 @@
                                     const apiUpgradeCost = numCameras * apiCost * (1 - discountRate);
                                     upgradeCost += apiUpgradeCost * 12;
                                     monthlyEstimate += apiUpgradeCost;
-                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/camera/month × 0.65 (after discount) = +${Math.round(apiUpgradeCost).toLocaleString()}/month`);
+                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/stream/month × 0.65 (after discount) = +${Math.round(apiUpgradeCost).toLocaleString()}/month`);
                                 } else {
                                     const apiUpgradeCost = numCameras * apiCost;
                                     upgradeCost += apiUpgradeCost;
-                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/camera/month = +${apiUpgradeCost.toLocaleString()}`);
+                                    breakdown.push(`API Access: ${numCameras} cameras × ${apiCost}/stream/month = +${apiUpgradeCost.toLocaleString()}`);
                                 }
                                 break;
                             case 'support':
