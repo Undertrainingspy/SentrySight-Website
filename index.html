@@ -21,39 +21,39 @@
             --section-padding: 100px 0;
             --header-height: 70px;
         }
-        
+
         body {
             padding-top: var(--header-height);
             background-color: var(--darker-bg);
             color: var(--text-color);
         }
-        
+
         .mobile-menu-toggle {
             display: none;
             font-size: 24px;
             cursor: pointer;
         }
-        
+
         .mobile-signup {
             display: none;
         }
-        
+
         #main-nav ul li a i {
             width: 25px;
             text-align: center;
             margin-right: 10px;
         }
-        
+
         .mobile-icon {
             display: none;
         }
-        
-        /* Responsive fixes */
+
+        /* Responsive fixes for Header and Nav (keep minimal here as in your original) */
         @media (max-width: 768px) {
             body {
                 padding-top: 100px;
             }
-            
+
             .mobile-menu-toggle {
                 display: block;
                 position: absolute;
@@ -62,12 +62,12 @@
                 transform: translateY(-50%);
                 z-index: 1000;
             }
-            
+
             .nav-container {
                 position: relative;
                 justify-content: center;
             }
-            
+
             #main-nav {
                 position: absolute;
                 top: var(--header-height);
@@ -77,48 +77,48 @@
                 transition: left 0.3s ease;
                 z-index: 999;
             }
-            
+
             #main-nav.active {
                 left: 0;
             }
-            
+
             #main-nav ul {
                 flex-direction: column;
                 padding: 20px 0;
             }
-            
+
             #main-nav ul li {
                 margin: 15px 0;
                 border-bottom: 1px solid rgba(255,255,255,0.1);
                 padding-bottom: 15px;
             }
-            
+
             #main-nav ul li:last-child {
                 border-bottom: none;
             }
-            
+
             #main-nav ul li a {
                 display: flex;
                 align-items: center;
                 font-size: 16px;
                 padding: 0 20px;
             }
-            
+
             .mobile-icon {
                 display: inline-block;
             }
-            
+
             .login-btn {
                 display: none;
             }
-            
+
             .mobile-signup {
                 display: block;
                 margin: 20px auto;
                 width: 80%;
                 text-align: center;
             }
-            
+
             .desktop-signup {
                 display: none;
             }
@@ -131,12 +131,12 @@
             <div class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-            
+
             <a href="index.html" class="logo-container">
                 <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
                 <span class="logo-text">SentrySight</span>
             </a>
-            
+
             <nav id="main-nav">
                 <ul>
                     <li><a href="#" class="active"><i class="fas fa-home"></i> <span class="menu-text">Home</span></a></li>
@@ -150,7 +150,7 @@
             <a href="signup.html" class="login-btn active desktop-signup">Sign Up for Waitlist</a>
         </div>
     </header>
-    
+
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
@@ -162,19 +162,19 @@
             </div>
         </div>
         <div class="scroll-down">
-            <a href="#business-security"><i class="fas fa-chevron-down"></i></a>
+            <a href="#why-choose"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
-    
+
     <div class="section-divider"></div>
-    
+
     <section id="why-choose" class="why-choose">
         <div class="container">
             <h2 class="section-title">Why Choose Our AI Solution?</h2>
             <p class="section-subtitle">Prevent incidents, save lives, and protect your business with the latest AI technology.</p>
-            
+
             <div class="red-divider"></div>
-            
+
             <div class="features-grid">
                 <div class="feature-item">
                     <div class="feature-icon-circle">
@@ -183,7 +183,7 @@
                     <h3>Real-Time Alerts</h3>
                     <p>Instant notifications to law enforcement ensure timely intervention and minimize risks.</p>
                 </div>
-                
+
                 <div class="feature-item">
                     <div class="feature-icon-circle">
                         <i class="fas fa-brain"></i>
@@ -191,7 +191,7 @@
                     <h3>Advanced AI Technology</h3>
                     <p>Our system uses state-of-the-art AI to identify threats with high accuracy.</p>
                 </div>
-                
+
                 <div class="feature-item">
                     <div class="feature-icon-circle">
                         <i class="fas fa-lock"></i>
@@ -199,7 +199,7 @@
                     <h3>Easy Integration</h3>
                     <p>Seamlessly integrates with your existing security cameras and systems.</p>
                 </div>
-                
+
                 <div class="feature-item">
                     <div class="feature-icon-circle">
                         <i class="fas fa-bolt"></i>
@@ -207,7 +207,7 @@
                     <h3>Rapid Response</h3>
                     <p>Immediate alerts enable quick action to prevent potential incidents.</p>
                 </div>
-                
+
                 <div class="feature-item">
                     <div class="feature-icon-circle">
                         <i class="fas fa-eye"></i>
@@ -215,7 +215,7 @@
                     <h3>24/7 Monitoring</h3>
                     <p>Continuous surveillance ensures constant protection for your premises.</p>
                 </div>
-                
+
                 <div class="feature-item">
                     <div class="feature-icon-circle">
                         <i class="fas fa-th-large"></i>
@@ -229,7 +229,7 @@
             <a href="#how-it-works"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
-    
+
     <section id="how-it-works" class="how-it-works">
         <div class="blue-accent"></div>
         <div class="container how-it-works-container">
@@ -247,7 +247,7 @@
             <a href="#security-strategy"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
-    
+
     <section id="security-strategy" class="security-strategy">
         <div class="green-accent"></div>
         <div class="container security-strategy-container">
@@ -260,140 +260,108 @@
             <div class="security-strategy-image">
                 <div class="graph-container">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
-                      <!-- Background -->
-                      <rect width="900" height="600" fill="#151723" rx="10" ry="10"/>
-                      
-                      <!-- Title -->
-                      <text x="450" y="50" font-family="Arial" font-size="26" fill="#ffffff" text-anchor="middle" font-weight="bold">Security Response Comparison</text>
-                      
-                      <!-- Two columns header -->
-                      <text x="225" y="100" font-family="Arial" font-size="20" fill="#ed3c64" text-anchor="middle" font-weight="bold">Traditional Approach</text>
-                      <text x="675" y="100" font-family="Arial" font-size="20" fill="#8B7DEE" text-anchor="middle" font-weight="bold">SentrySight AI System</text>
-                      
-                      <!-- Dividing line -->
-                      <line x1="450" y1="80" x2="450" y2="580" stroke="#333" stroke-width="2" stroke-dasharray="10,5"/>
-                      
-                      <!-- Traditional approach flow (left side) -->
-                      <!-- Step 1: Threat Enters -->
-                      <rect x="125" y="150" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#666"/>
-                      <text x="225" y="177" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Threat Enters Premises</text>
-                      <text x="225" y="197" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">No early detection</text>
-                      
-                      <!-- Arrow down -->
-                      <line x1="225" y1="210" x2="225" y2="240" stroke="#666" stroke-width="2"/>
-                      <polygon points="225,250 220,240 230,240" fill="#666"/>
-                      
-                      <!-- Step 2: Incident Occurs -->
-                      <rect x="125" y="250" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#ed3c64"/>
-                      <text x="225" y="277" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Incident Occurs</text>
-                      <text x="225" y="297" font-family="Arial" font-size="14" fill="#ed3c64" text-anchor="middle">Potential casualties</text>
-                      
-                      <!-- Arrow down -->
-                      <line x1="225" y1="310" x2="225" y2="340" stroke="#666" stroke-width="2"/>
-                      <polygon points="225,350 220,340 230,340" fill="#666"/>
-                      
-                      <!-- Step 3: Witnesses Call 911 -->
-                      <rect x="125" y="350" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#666"/>
-                      <text x="225" y="377" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Witnesses Call 911</text>
-                      <text x="225" y="397" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">3-5 minute delay</text>
-                      
-                      <!-- Arrow down -->
-                      <line x1="225" y1="410" x2="225" y2="440" stroke="#666" stroke-width="2"/>
-                      <polygon points="225,450 220,440 230,440" fill="#666"/>
-                      
-                      <!-- Step 4: Police Respond -->
-                      <rect x="125" y="450" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#666"/>
-                      <text x="225" y="477" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Police Respond</text>
-                      <text x="225" y="497" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Rely on witness accounts</text>
-                      
-                      <!-- Arrow down -->
-                      <line x1="225" y1="510" x2="225" y2="540" stroke="#666" stroke-width="2"/>
-                      <polygon points="225,550 220,540 230,540" fill="#666"/>
-                      
-                      <!-- Step 5: Threat Neutralized -->
-                      <rect x="125" y="550" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#666"/>
-                      <text x="225" y="580" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Threat Neutralized</text>
-                      <text x="225" y="600" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Average time: 10-20 minutes</text>
-                      
-                      <!-- Response time indicator -->
-                      <rect x="50" y="150" width="30" height="460" fill="rgba(237, 60, 100, 0.1)" stroke="none"/>
-                      <text x="65" y="335" font-family="Arial" font-size="14" fill="#ed3c64" text-anchor="middle" transform="rotate(-90, 65, 335)">RESPONSE TIME: 10-20 MINUTES</text>
-                      
-                      <!-- SentrySight AI approach flow (right side) -->
-                      <!-- Step 1: Early Threat Detection -->
-                      <rect x="575" y="150" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
-                      <text x="675" y="177" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Early Threat Detection</text>
-                      <text x="675" y="197" font-family="Arial" font-size="14" fill="#8B7DEE" text-anchor="middle">AI identifies weapon outside</text>
-                      
-                      <!-- Arrow down with branch -->
-                      <line x1="675" y1="210" x2="675" y2="225" stroke="#8B7DEE" stroke-width="2"/>
-                      <!-- Branch left -->
-                      <line x1="675" y1="225" x2="610" y2="225" stroke="#8B7DEE" stroke-width="2"/>
-                      <line x1="610" y1="225" x2="610" y2="240" stroke="#8B7DEE" stroke-width="2"/>
-                      <polygon points="610,250 605,240 615,240" fill="#8B7DEE"/>
-                      <!-- Branch right -->
-                      <line x1="675" y1="225" x2="740" y2="225" stroke="#8B7DEE" stroke-width="2"/>
-                      <line x1="740" y1="225" x2="740" y2="240" stroke="#8B7DEE" stroke-width="2"/>
-                      <polygon points="740,250 735,240 745,240" fill="#8B7DEE"/>
-                      
-                      <!-- Step 2A: Prevention Outside -->
-                      <rect x="510" y="250" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
-                      <text x="585" y="277" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Prevention Outside</text>
-                      <text x="585" y="297" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Incident avoided</text>
-                      
-                      <!-- Step 2B: Immediate Alert -->
-                      <rect x="690" y="250" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
-                      <text x="765" y="277" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Immediate Alert</text>
-                      <text x="765" y="297" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">If threat enters</text>
-                      
-                      <!-- Arrow down from 2B -->
-                      <line x1="765" y1="310" x2="765" y2="340" stroke="#8B7DEE" stroke-width="2"/>
-                      <polygon points="765,350 760,340 770,340" fill="#8B7DEE"/>
-                      
-                      <!-- Step 3: Automated Police Notification -->
-                      <rect x="690" y="350" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
-                      <text x="765" y="377" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Police Notification</text>
-                      <text x="765" y="397" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Automatic alert sent</text>
-                      
-                      <!-- Arrow down -->
-                      <line x1="765" y1="410" x2="765" y2="440" stroke="#8B7DEE" stroke-width="2"/>
-                      <polygon points="765,450 760,440 770,440" fill="#8B7DEE"/>
-                      
-                      <!-- Step 4: Data Sharing -->
-                      <rect x="690" y="450" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
-                      <text x="765" y="477" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Detailed Intel Shared</text>
-                      <text x="765" y="497" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Location, images, status</text>
-                      
-                      <!-- Arrow down -->
-                      <line x1="765" y1="510" x2="765" y2="540" stroke="#8B7DEE" stroke-width="2"/>
-                      <polygon points="765,550 760,540 770,540" fill="#8B7DEE"/>
-                      
-                      <!-- Step 5: Swift Response -->
-                      <rect x="690" y="550" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
-                      <text x="765" y="580" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Swift Response</text>
-                      <text x="765" y="600" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Average time: 1-2 minutes</text>
-                      
-                      <!-- Response time indicator -->
-                      <rect x="860" y="150" width="30" height="460" fill="rgba(139, 125, 238, 0.1)" stroke="none"/>
-                      <text x="875" y="335" font-family="Arial" font-size="14" fill="#8B7DEE" text-anchor="middle" transform="rotate(-90, 875, 335)">RESPONSE TIME: 1-2 MINUTES</text>
-                      
-                      <!-- Connection between prevention and end -->
-                      <line x1="585" y1="310" x2="585" y2="580" stroke="#8B7DEE" stroke-width="2" stroke-dasharray="5,5"/>
-                      <text x="585" y="535" font-family="Arial" font-size="14" fill="#8B7DEE" text-anchor="middle">No casualties</text>
-                      
-                      <!-- Key differences callout -->
-                      <rect x="375" y="280" width="150" height="140" rx="10" ry="10" fill="rgba(0,0,0,0.3)" stroke="#ed3c64"/>
-                      <text x="450" y="305" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Key Differences</text>
-                      <line x1="400" y1="315" x2="500" y2="315" stroke="#666" stroke-width="1"/>
-                      
-                      <text x="390" y="335" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="start">• Prevention vs. Reaction</text>
-                      <text x="390" y="360" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="start">• 90% faster response</text>
-                      <text x="390" y="385" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="start">• Accurate information</text>
-                      <text x="390" y="410" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="start">• Potential lives saved</text>
-                      
-                      <!-- Arrows pointing to key differences -->
-                      <line x1="325" y1="350" x2="375" y2="350" stroke="#ed3c64" stroke-width="1" stroke-dasharray="3,3"/>
-                      <line x1="575" y1="350" x2="525" y2="350" stroke="#8B7DEE" stroke-width="1" stroke-dasharray="3,3"/>
+                    <rect width="900" height="600" fill="#151723" rx="10" ry="10"/>
+
+                    <text x="450" y="50" font-family="Arial" font-size="26" fill="#ffffff" text-anchor="middle" font-weight="bold">Security Response Comparison</text>
+
+                    <text x="225" y="100" font-family="Arial" font-size="20" fill="#ed3c64" text-anchor="middle" font-weight="bold">Traditional Approach</text>
+                    <text x="675" y="100" font-family="Arial" font-size="20" fill="#8B7DEE" text-anchor="middle" font-weight="bold">SentrySight AI System</text>
+
+                    <line x1="450" y1="80" x2="450" y2="580" stroke="#333" stroke-width="2" stroke-dasharray="10,5"/>
+
+                    <rect x="125" y="150" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#666"/>
+                    <text x="225" y="177" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Threat Enters Premises</text>
+                    <text x="225" y="197" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">No early detection</text>
+
+                    <line x1="225" y1="210" x2="225" y2="240" stroke="#666" stroke-width="2"/>
+                    <polygon points="225,250 220,240 230,240" fill="#666"/>
+
+                    <rect x="125" y="250" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#ed3c64"/>
+                    <text x="225" y="277" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Incident Occurs</text>
+                    <text x="225" y="297" font-family="Arial" font-size="14" fill="#ed3c64" text-anchor="middle">Potential casualties</text>
+
+                    <line x1="225" y1="310" x2="225" y2="340" stroke="#666" stroke-width="2"/>
+                    <polygon points="225,350 220,340 230,340" fill="#666"/>
+
+                    <rect x="125" y="350" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#666"/>
+                    <text x="225" y="377" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Witnesses Call 911</text>
+                    <text x="225" y="397" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">3-5 minute delay</text>
+
+                    <line x1="225" y1="410" x2="225" y2="440" stroke="#666" stroke-width="2"/>
+                    <polygon points="225,450 220,440 230,440" fill="#666"/>
+
+                    <rect x="125" y="450" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#666"/>
+                    <text x="225" y="477" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Police Respond</text>
+                    <text x="225" y="497" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Rely on witness accounts</text>
+
+                    <line x1="225" y1="510" x2="225" y2="540" stroke="#666" stroke-width="2"/>
+                    <polygon points="225,550 220,540 230,540" fill="#666"/>
+
+                    <rect x="125" y="550" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#666"/>
+                    <text x="225" y="580" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Threat Neutralized</text>
+                    <text x="225" y="600" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Average time: 10-20 minutes</text>
+
+                    <rect x="50" y="150" width="30" height="460" fill="rgba(237, 60, 100, 0.1)" stroke="none"/>
+                    <text x="65" y="335" font-family="Arial" font-size="14" fill="#ed3c64" text-anchor="middle" transform="rotate(-90, 65, 335)">RESPONSE TIME: 10-20 MINUTES</text>
+
+                    <rect x="575" y="150" width="200" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
+                    <text x="675" y="177" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Early Threat Detection</text>
+                    <text x="675" y="197" font-family="Arial" font-size="14" fill="#8B7DEE" text-anchor="middle">AI identifies weapon outside</text>
+
+                    <line x1="675" y1="210" x2="675" y2="225" stroke="#8B7DEE" stroke-width="2"/>
+                    <line x1="675" y1="225" x2="610" y2="225" stroke="#8B7DEE" stroke-width="2"/>
+                    <line x1="610" y1="225" x2="610" y2="240" stroke="#8B7DEE" stroke-width="2"/>
+                    <polygon points="610,250 605,240 615,240" fill="#8B7DEE"/>
+                    <line x1="675" y1="225" x2="740" y2="225" stroke="#8B7DEE" stroke-width="2"/>
+                    <line x1="740" y1="225" x2="740" y2="240" stroke="#8B7DEE" stroke-width="2"/>
+                    <polygon points="740,250 735,240 745,240" fill="#8B7DEE"/>
+
+                    <rect x="510" y="250" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
+                    <text x="585" y="277" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Prevention Outside</text>
+                    <text x="585" y="297" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Incident avoided</text>
+
+                    <rect x="690" y="250" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
+                    <text x="765" y="277" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Immediate Alert</text>
+                    <text x="765" y="297" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">If threat enters</text>
+
+                    <line x1="765" y1="310" x2="765" y2="340" stroke="#8B7DEE" stroke-width="2"/>
+                    <polygon points="765,350 760,340 770,340" fill="#8B7DEE"/>
+
+                    <rect x="690" y="350" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
+                    <text x="765" y="377" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Police Notification</text>
+                    <text x="765" y="397" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Automatic alert sent</text>
+
+                    <line x1="765" y1="410" x2="765" y2="440" stroke="#8B7DEE" stroke-width="2"/>
+                    <polygon points="765,450 760,440 770,440" fill="#8B7DEE"/>
+
+                    <rect x="690" y="450" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
+                    <text x="765" y="477" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Detailed Intel Shared</text>
+                    <text x="765" y="497" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Location, images, status</text>
+
+                    <line x1="765" y1="510" x2="765" y2="540" stroke="#8B7DEE" stroke-width="2"/>
+                    <polygon points="765,550 760,540 770,540" fill="#8B7DEE"/>
+
+                    <rect x="690" y="550" width="150" height="60" rx="10" ry="10" fill="#1c1e2a" stroke="#8B7DEE"/>
+                    <text x="765" y="580" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Swift Response</text>
+                    <text x="765" y="600" font-family="Arial" font-size="14" fill="#b0b0b0" text-anchor="middle">Average time: 1-2 minutes</text>
+
+                    <rect x="860" y="150" width="30" height="460" fill="rgba(139, 125, 238, 0.1)" stroke="none"/>
+                    <text x="875" y="335" font-family="Arial" font-size="14" fill="#8B7DEE" text-anchor="middle" transform="rotate(-90, 875, 335)">RESPONSE TIME: 1-2 MINUTES</text>
+
+                    <line x1="585" y1="310" x2="585" y2="580" stroke="#8B7DEE" stroke-width="2" stroke-dasharray="5,5"/>
+                    <text x="585" y="535" font-family="Arial" font-size="14" fill="#8B7DEE" text-anchor="middle">No casualties</text>
+
+                    <rect x="375" y="280" width="150" height="140" rx="10" ry="10" fill="rgba(0,0,0,0.3)" stroke="#ed3c64"/>
+                    <text x="450" y="305" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Key Differences</text>
+                    <line x1="400" y1="315" x2="500" y2="315" stroke="#666" stroke-width="1"/>
+
+                    <text x="390" y="335" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="start">• Prevention vs. Reaction</text>
+                    <text x="390" y="360" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="start">• 90% faster response</text>
+                    <text x="390" y="385" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="start">• Accurate information</text>
+                    <text x="390" y="410" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="start">• Potential lives saved</text>
+
+                    <line x1="325" y1="350" x2="375" y2="350" stroke="#ed3c64" stroke-width="1" stroke-dasharray="3,3"/>
+                    <line x1="575" y1="350" x2="525" y2="350" stroke="#8B7DEE" stroke-width="1" stroke-dasharray="3,3"/>
                     </svg>
                 </div>
             </div>
@@ -402,7 +370,7 @@
             <a href="#footer"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
-    
+
     <div class="pre-footer">
         <div class="container pre-footer-container">
             <h2 class="pre-footer-title">Start Protecting Your Business Today</h2>
@@ -413,7 +381,7 @@
             </form>
         </div>
     </div>
-    
+
     <footer id="footer">
         <div class="container">
             <div class="social-icons">
@@ -426,7 +394,7 @@
             <p class="copyright">&copy; 2025 SentrySight. All rights reserved.</p>
         </div>
     </footer>
-    
+
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -437,17 +405,17 @@
                 });
             });
         });
-        
+
         // Header scroll behavior
         const header = document.getElementById('main-header');
         let lastScrollTop = 0;
         let isScrolling = false;
-        
+
         window.addEventListener('scroll', function() {
             if (!isScrolling) {
                 window.requestAnimationFrame(function() {
                     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    
+
                     // Show header when scrolling up, hide when scrolling down
                     if (scrollTop > lastScrollTop && scrollTop > 200) {
                         // Scrolling down
@@ -456,20 +424,20 @@
                         // Scrolling up
                         header.classList.remove('header-hidden');
                     }
-                    
+
                     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
                     isScrolling = false;
                 });
-                
+
                 isScrolling = true;
             }
         }, false);
-        
+
         // Mobile menu toggle
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
             document.getElementById('main-nav').classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking a link
         document.querySelectorAll('#main-nav a').forEach(link => {
             link.addEventListener('click', function() {
