@@ -26,13 +26,105 @@
             background-color: var(--darker-bg);
             color: var(--text-color);
         }
-
+        
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-signup {
+            display: none;
+        }
+        
+        #main-nav ul li a i {
+            width: 25px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        
+        .mobile-icon {
+            display: none;
+        }
+        
+        /* Responsive fixes */
         @media (max-width: 768px) {
             body {
-                padding-top: 100px; 
+                padding-top: 100px;
             }
+            
             header.fixed-header + .about-page-content {
                padding-top: 120px; 
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+            }
+            
+            .nav-container {
+                position: relative;
+                justify-content: center;
+            }
+            
+            #main-nav {
+                position: absolute;
+                top: var(--header-height);
+                left: -100%;
+                width: 100%;
+                background-color: var(--darker-bg);
+                transition: left 0.3s ease;
+                z-index: 999;
+            }
+            
+            #main-nav.active {
+                left: 0;
+            }
+            
+            #main-nav ul {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+            
+            #main-nav ul li {
+                margin: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 15px;
+            }
+            
+            #main-nav ul li:last-child {
+                border-bottom: none;
+            }
+            
+            #main-nav ul li a {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                padding: 0 20px;
+            }
+            
+            .mobile-icon {
+                display: inline-block;
+            }
+            
+            .login-btn {
+                display: none;
+            }
+            
+            .mobile-signup {
+                display: block;
+                margin: 20px auto;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .desktop-signup {
+                display: none;
             }
         }
     </style>
@@ -40,20 +132,26 @@
 <body>
     <header id="main-header">
         <div class="container nav-container">
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
             <a href="index.html" class="logo-container">
                 <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
                 <span class="logo-text">SentrySight</span>
             </a>
-            <nav>
+            
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="questionnaire.html">Questionnaire</a></li>
-                    <li><a href="demo.html">Demo</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="index.html"><i class="fas fa-home mobile-icon"></i> <span class="menu-text">Home</span></a></li>
+                    <li><a href="about.html" class="active"><i class="fas fa-info-circle mobile-icon"></i> <span class="menu-text">About Us</span></a></li>
+                    <li><a href="questionnaire.html"><i class="fas fa-clipboard-list mobile-icon"></i> <span class="menu-text">Questionnaire</span></a></li>
+                    <li><a href="demo.html"><i class="fas fa-play-circle mobile-icon"></i> <span class="menu-text">Demo</span></a></li>
+                    <li><a href="pricing.html"><i class="fas fa-tag mobile-icon"></i> <span class="menu-text">Pricing</span></a></li>
                 </ul>
+                <a href="signup.html" class="login-btn active mobile-signup"><i class="fas fa-user-plus"></i> Sign Up for Waitlist</a>
             </nav>
-            <a href="signup.html" class="login-btn active">Sign Up for Waitlist</a>
+            <a href="signup.html" class="login-btn active desktop-signup">Sign Up for Waitlist</a>
         </div>
     </header>
 
@@ -167,7 +265,7 @@
     </footer>
 
     <script>
-        // Smooth scrolling 
+        // Smooth scrolling and header behavior 
         const header = document.getElementById('main-header');
         let lastScrollTop = 0;
         let isScrolling = false;
@@ -194,6 +292,17 @@
             console.warn("Header element #main-header not found.");
         }
 
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('main-nav').classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>

@@ -31,15 +31,101 @@
             overflow-x: hidden;
             font-family: Arial, sans-serif;
         }
+        
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-signup {
+            display: none;
+        }
+        
+        #main-nav ul li a i {
+            width: 25px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        
+        .mobile-icon {
+            display: none;
+        }
 
         @media (max-width: 768px) {
-            body { padding-top: 120px; }
-            header#main-header { height: auto; }
-            .nav-container { flex-direction: column; padding: 15px 0; height: auto; }
-            .logo-container { margin-bottom: 15px; }
-            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
-            nav ul li { margin: 5px 10px; }
-            .login-btn { margin-top: 15px; }
+            body { 
+                padding-top: 100px;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+            }
+            
+            .nav-container {
+                position: relative;
+                justify-content: center;
+            }
+            
+            #main-nav {
+                position: absolute;
+                top: var(--header-height);
+                left: -100%;
+                width: 100%;
+                background-color: var(--darker-bg);
+                transition: left 0.3s ease;
+                z-index: 999;
+            }
+            
+            #main-nav.active {
+                left: 0;
+            }
+            
+            #main-nav ul {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+            
+            #main-nav ul li {
+                margin: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 15px;
+            }
+            
+            #main-nav ul li:last-child {
+                border-bottom: none;
+            }
+            
+            #main-nav ul li a {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                padding: 0 20px;
+            }
+            
+            .mobile-icon {
+                display: inline-block;
+            }
+            
+            .login-btn {
+                display: none;
+            }
+            
+            .mobile-signup {
+                display: block;
+                margin: 20px auto;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .desktop-signup {
+                display: none;
+            }
         }
 
         .signup-section {
@@ -179,20 +265,26 @@
 <body>
     <header id="main-header">
         <div class="container nav-container">
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
             <a href="index.html" class="logo-container">
                 <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
                 <span class="logo-text">SentrySight</span>
             </a>
-            <nav>
+            
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="questionnaire.html">Questionnaire</a></li>
-                    <li><a href="demo.html">Demo</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="index.html"><i class="fas fa-home mobile-icon"></i> <span class="menu-text">Home</span></a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle mobile-icon"></i> <span class="menu-text">About Us</span></a></li>
+                    <li><a href="questionnaire.html"><i class="fas fa-clipboard-list mobile-icon"></i> <span class="menu-text">Questionnaire</span></a></li>
+                    <li><a href="demo.html"><i class="fas fa-play-circle mobile-icon"></i> <span class="menu-text">Demo</span></a></li>
+                    <li><a href="pricing.html"><i class="fas fa-tag mobile-icon"></i> <span class="menu-text">Pricing</span></a></li>
                 </ul>
+                <a href="signup.html" class="login-btn active mobile-signup"><i class="fas fa-user-plus"></i> Sign Up for Waitlist</a>
             </nav>
-            <a href="signup.html" class="login-btn active">Sign Up for Waitlist</a>
+            <a href="signup.html" class="login-btn active desktop-signup">Sign Up for Waitlist</a>
         </div>
     </header>
 
@@ -275,7 +367,7 @@
 
             <div class="alternate-contact">
                 <h3>Prefer to speak with someone directly?</h3>
-                <p>Contact our sales team at <strong>info@sentrysight.com</strong> or call us at <strong>(555) 123-4567</strong></p>
+                <p>Contact our sales team at <strong>contact@sentrysight.com</strong> or call us at <strong>(916) 425-6820</strong></p>
             </div>
 
         </div>
@@ -324,6 +416,18 @@
                 }
             }, false);
         }
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('main-nav').classList.remove('active');
+            });
+        });
 
         // Handle form submission with AJAX to prevent redirect
         const waitlistForm = document.getElementById('waitlist-form');

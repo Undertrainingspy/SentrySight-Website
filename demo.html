@@ -31,16 +31,6 @@
             overflow-x: hidden; 
         }
 
-        @media (max-width: 768px) { 
-            body { padding-top: 120px; }
-            header#main-header { height: auto; }
-            .nav-container { flex-direction: column; padding: 15px 0; height: auto; }
-            .logo-container { margin-bottom: 15px; }
-            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
-            nav ul li { margin: 5px 10px; }
-            .login-btn { margin-top: 15px; }
-        }
-
         .demo-intro-paragraph {
             text-align: center;
             max-width: 700px;
@@ -66,140 +56,128 @@
             height: auto;
             max-height: 600px;
         }
-        .mobile-toggle {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-    }
-    
-    .toggle-bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: var(--text-color);
-        margin: 5px 0;
-        transition: transform 0.3s, opacity 0.3s;
-    }
-    
-    .mobile-header-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-    
-    .mobile-login {
-        display: none;
-    }
-    @media (max-width: 768px) {
-        body {
-            padding-top: var(--header-height);
+        
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
         }
         
-        header#main-header {
-            height: var(--header-height);
-        }
-        
-        .nav-container {
-            flex-direction: column;
-            padding: 0;
-            height: var(--header-height);
-            overflow: hidden;
-            transition: height 0.3s ease-in-out;
-        }
-        
-        .mobile-header-row {
-            height: var(--header-height);
-            padding: 0 20px;
-        }
-        
-        .mobile-toggle {
-            display: block;
-        }
-        
-        #mobile-nav {
-            width: 100%;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
-        }
-        
-        .nav-open #mobile-nav {
-            max-height: 300px;
-        }
-        
-        .nav-open .nav-container {
-            height: auto;
-        }
-        
-        /* Animate hamburger to X */
-        .nav-open .toggle-bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-        
-        .nav-open .toggle-bar:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .nav-open .toggle-bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-        
-        nav ul {
-            flex-direction: column;
-            margin: 0;
-            padding: 15px 0;
-        }
-        
-        nav ul li {
-            margin: 0;
-            width: 100%;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        nav ul li a {
-            padding: 12px 0;
-        }
-        
-        .login-btn {
+        .mobile-signup {
             display: none;
         }
         
-        .mobile-login {
-            display: inline-block;
-            margin: 15px auto;
+        #main-nav ul li a i {
+            width: 25px;
+            text-align: center;
+            margin-right: 10px;
         }
-    }
-
+        
+        .mobile-icon {
+            display: none;
+        }
+        
+        /* Responsive fixes */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+            }
+            
+            .nav-container {
+                position: relative;
+                justify-content: center;
+            }
+            
+            #main-nav {
+                position: absolute;
+                top: var(--header-height);
+                left: -100%;
+                width: 100%;
+                background-color: var(--darker-bg);
+                transition: left 0.3s ease;
+                z-index: 999;
+            }
+            
+            #main-nav.active {
+                left: 0;
+            }
+            
+            #main-nav ul {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+            
+            #main-nav ul li {
+                margin: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 15px;
+            }
+            
+            #main-nav ul li:last-child {
+                border-bottom: none;
+            }
+            
+            #main-nav ul li a {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                padding: 0 20px;
+            }
+            
+            .mobile-icon {
+                display: inline-block;
+            }
+            
+            .login-btn {
+                display: none;
+            }
+            
+            .mobile-signup {
+                display: block;
+                margin: 20px auto;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .desktop-signup {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header id="main-header">
         <div class="container nav-container">
-            <div class="mobile-header-row">
-                <a href="index.html" class="logo-container">
-                    <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
-                    <span class="logo-text">SentrySight</span>
-                </a>
-                <button class="mobile-toggle" aria-label="Toggle navigation menu">
-                    <span class="toggle-bar"></span>
-                    <span class="toggle-bar"></span>
-                    <span class="toggle-bar"></span>
-                </button>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
-            <nav id="mobile-nav">
+            
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.png" alt="SentrySight Logo" class="logo-img">
+                <span class="logo-text">SentrySight</span>
+            </a>
+            
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="questionnaire.html">Questionnaire</a></li>
-                    <li><a href="demo.html" class="active">Demo</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="index.html"><i class="fas fa-home mobile-icon"></i> <span class="menu-text">Home</span></a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle mobile-icon"></i> <span class="menu-text">About Us</span></a></li>
+                    <li><a href="questionnaire.html"><i class="fas fa-clipboard-list mobile-icon"></i> <span class="menu-text">Questionnaire</span></a></li>
+                    <li><a href="demo.html" class="active"><i class="fas fa-play-circle mobile-icon"></i> <span class="menu-text">Demo</span></a></li>
+                    <li><a href="pricing.html"><i class="fas fa-tag mobile-icon"></i> <span class="menu-text">Pricing</span></a></li>
                 </ul>
-                <a href="signup.html" class="login-btn active mobile-login">Sign Up for Waitlist</a>
+                <a href="signup.html" class="login-btn active mobile-signup"><i class="fas fa-user-plus"></i> Sign Up for Waitlist</a>
             </nav>
+            <a href="signup.html" class="login-btn active desktop-signup">Sign Up for Waitlist</a>
         </div>
     </header>
     
@@ -393,51 +371,40 @@
     </footer>
 
     <script>
-        // Mobile navigation toggle
-        document.addEventListener("DOMContentLoaded", function() {
-            const mobileToggle = document.querySelector('.mobile-toggle');
-            const header = document.getElementById('main-header');
-            
-            if (mobileToggle && header) {
-                mobileToggle.addEventListener('click', function() {
-                    header.classList.toggle('nav-open');
-                });
-                
-                // Close mobile menu when a link is clicked
-                const navLinks = document.querySelectorAll('#mobile-nav a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        header.classList.remove('nav-open');
+        // --- Header scroll behavior ---
+        const header = document.getElementById('main-header');
+        let lastScrollTop = 0;
+        let isScrolling = false;
+        
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(function() {
+                        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+                            header.classList.add('header-hidden');
+                        } else {
+                            header.classList.remove('header-hidden');
+                        }
+                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                        isScrolling = false;
                     });
-                });
-            }
-            
-            // --- Header scroll behavior ---
-            let lastScrollTop = 0;
-            let isScrolling = false;
-    
-            if (header) {
-                window.addEventListener('scroll', function() {
-                    if (!isScrolling) {
-                        window.requestAnimationFrame(function() {
-                            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                            if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
-                                header.classList.add('header-hidden');
-                                // Also close the mobile menu when scrolling down
-                                header.classList.remove('nav-open');
-                            } else {
-                                header.classList.remove('header-hidden');
-                            }
-                            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-                            isScrolling = false;
-                        });
-                        isScrolling = true;
-                    }
-                }, false);
-            }
+                    isScrolling = true;
+                }
+            }, false);
+        }
+        
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('main-nav').classList.remove('active');
+            });
         });
     </script>
-    
-
 </body>
 </html>
